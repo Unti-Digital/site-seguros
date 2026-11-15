@@ -1,9 +1,20 @@
 # Execução e deploy
 
-## Configuração planejada para Vercel — sem deploy realizado
-Importar futuramente o repositório completo e selecionar **Root Directory:
-frontend** e **Framework Preset: Next.js**. O aplicativo não depende de arquivos
-fora de frontend/ para executar ou compilar; docs/ e references/ são contexto.
+## Homologação na Vercel
+Primeiro deploy realizado em 15/11/2026 no projeto `nova-proposta-seguros`, no
+escopo `unti-digital`. Como foi o primeiro deploy do projeto, a Vercel o atribuiu
+automaticamente ao alvo production. O alias atual é
+<https://nova-proposta-seguros.vercel.app>; a proteção de acesso da Vercel está
+ativa, portanto o endereço exige autenticação autorizada da equipe.
+
+O deploy foi enviado a partir de `frontend/` pela CLI, sem conexão com repositório
+remoto. `SITE_INDEXING_ENABLED=false` foi aplicado no build e no runtime; `SITE_URL`
+permanece ausente. O build remoto concluiu com status Ready e gerou as 17 rotas
+estáticas esperadas. O aplicativo não depende de arquivos fora de frontend/ para
+executar ou compilar; docs/ e references/ são contexto.
+
+Ao conectar futuramente um repositório remoto, selecionar **Root Directory:
+frontend** e **Framework Preset: Next.js**.
 
 | Configuração | Valor |
 | --- | --- |
@@ -36,7 +47,8 @@ Fontes oficiais consultadas em 14/11/2026:
 - [Node.js suportado e engines](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions).
 - [Cabeçalhos de Preview, incluindo noindex](https://vercel.com/docs/headers/response-headers).
 
-Não foi executado login, link, importação de repositório ou deploy nesta auditoria.
+Não há repositório remoto conectado, domínio próprio ou deploy automático.
+
 ## Ambiente local
 Node.js 24 LTS utilizado na preparação; npm com lockfile em frontend/.
 Em frontend/: npm ci e npm run dev.
@@ -46,9 +58,10 @@ No PowerShell com scripts bloqueados, usar npm.cmd.
 ## Produção
 Executar as verificações de testing.md e npm run start para servir o build.
 O build precisa de acesso ao Google Fonts para resolver Inter.
-Nenhum provedor ou deploy foi configurado.
+O projeto de homologação está configurado na Vercel. Produção operacional,
+domínio próprio e automação por repositório continuam pendentes.
 
-Pendentes: hospedagem, domínio, CI/CD, variáveis por ambiente, infraestrutura
+Pendentes: domínio, CI/CD, variáveis por ambiente, infraestrutura
 WordPress, observabilidade, backups e publicação/revalidação.
 
 ## Indexação e domínio

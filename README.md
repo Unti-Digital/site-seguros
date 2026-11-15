@@ -17,7 +17,8 @@ sem envio. Integrações de formulário/WhatsApp, política definitiva, CMS e
 publicação seguem pendentes. Fotografias reais e grafismo do manual
 estão documentados em docs/visual-assets.md.
 
-Preparação para homologação na Vercel: Root Directory `frontend`, preset Next.js,
-Node 24.x e instalação `npm ci`. Manter `SITE_INDEXING_ENABLED=false` na revisão.
-Consulte [deploy](docs/deploy.md) e [auditoria técnica](docs/technical-audit.md).
-Repositório remoto, integrações e deploy não foram criados nesta etapa.
+Homologação publicada na Vercel pelo projeto `nova-proposta-seguros`, com
+Node 24.x e `SITE_INDEXING_ENABLED=false`. O acesso permanece protegido pela
+autenticação da equipe e não há domínio próprio configurado. Consulte
+[deploy](docs/deploy.md) e [auditoria técnica](docs/technical-audit.md).
+O repositório Git local existe; repositório remoto e integrações continuam pendentes.
