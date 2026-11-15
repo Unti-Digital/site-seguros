@@ -21,4 +21,5 @@ Homologação publicada na Vercel pelo projeto `nova-proposta-seguros`, com
 Node 24.x e `SITE_INDEXING_ENABLED=false`. O acesso permanece protegido pela
 autenticação da equipe e não há domínio próprio configurado. Consulte
 [deploy](docs/deploy.md) e [auditoria técnica](docs/technical-audit.md).
-O repositório Git local existe; repositório remoto e integrações continuam pendentes.
+O repositório remoto privado está configurado no GitHub; a integração automática
+entre GitHub e Vercel continua pendente.
