@@ -1,0 +1,67 @@
+{
+  "source": "references/manual-marca/MANUAL DE MARCA E APLICACAO - NOVA PROPOSTA SEGUROScópia.pdf",
+  "source_sha256": "a200c9f63e197ab0618a08dde92558f3e5a332fb8aff62a23ec967ccc7760da5",
+  "method": "Native PDF paths exported to SVG; original geometry, fills and transforms retained. Page backgrounds and unrelated artwork excluded. No tracing, raster upscaling, recoloring or background removal.",
+  "versions": [
+    {
+      "file": "nova-proposta-seguros-principal.svg",
+      "page": 16,
+      "source_bounds": [
+        399.9998779296875,
+        233.20132446289062,
+        999.99951171875,
+        627.8405151367188
+      ],
+      "width": 599.9996337890625,
+      "height": 394.6391906738281,
+      "paths": 41,
+      "transparent": true,
+      "sha256": "4ee439543a2de4049109ab9d437cdd2f81424f86cdffb84a734e985a9c820c72"
+    },
+    {
+      "file": "nova-proposta-seguros-negativa.svg",
+      "page": 4,
+      "source_bounds": [
+        469.00030517578125,
+        287.8402099609375,
+        689.0,
+        432.54132080078125
+      ],
+      "width": 219.99969482421875,
+      "height": 144.70111083984375,
+      "paths": 41,
+      "transparent": true,
+      "sha256": "e61b4a3c2f103057f09f77c1e80cb6d0213a1c2a2158adb3e2ca6c1b9b887d3b"
+    },
+    {
+      "file": "nova-proposta-seguros-monocromatica-azul.svg",
+      "page": 4,
+      "source_bounds": [
+        796.0003051757812,
+        287.8402099609375,
+        1016.0,
+        432.54132080078125
+      ],
+      "width": 219.99969482421875,
+      "height": 144.70111083984375,
+      "paths": 41,
+      "transparent": true,
+      "sha256": "a0eb7d30d41cce1a31f7b3dfc02f9ead245fae39269d37f1e1cbd42016c76ad2"
+    },
+    {
+      "file": "nova-proposta-seguros-monocromatica-preta.svg",
+      "page": 4,
+      "source_bounds": [
+        1123.000244140625,
+        287.8402099609375,
+        1342.9998779296875,
+        432.54132080078125
+      ],
+      "width": 219.9996337890625,
+      "height": 144.70111083984375,
+      "paths": 41,
+      "transparent": true,
+      "sha256": "e51f4c4551e5dc1db303a4a795092c2da422f56b3302cf4fbb1d0e3690c488aa"
+    }
+  ]
+}

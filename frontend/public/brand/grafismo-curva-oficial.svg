@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1270 0 650 1080" width="650" height="1080" preserveAspectRatio="none"><g transform="translate(-25 0)"><path transform="matrix(1,0,0,-1,1505,0)" d="M0 0H415V-1080H-140C80-760-80-300 0 0" fill="#f3f5f9" fill-rule="evenodd" />
+</g><path transform="matrix(1,0,0,-1,1425,0)" d="M0 0H55C-25-300 135-760-85-1080H-155C65-760-80-300 0 0" fill="#d90a3b" fill-rule="evenodd" />
+<path transform="matrix(1,0,0,-1,1505,0)" d="M0 0H415V-1080H-140C80-760-80-300 0 0" fill="#0138c7" fill-rule="evenodd" />
+</svg>
