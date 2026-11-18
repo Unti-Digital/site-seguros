@@ -35,7 +35,6 @@ export function prepareChatHandoff(input: unknown) {
 export function chatbotDeliveryStatus() {
   return {
     available: false as const,
-    message:
-      "Envio indisponível. Nenhuma informação foi enviada e nenhum atendimento foi registrado.",
+    message: "Revisão concluída.",
   };
 }

@@ -59,7 +59,7 @@ export default function ContactPage() {
                 },
                 {
                   title: "Cuide das suas informações",
-                  text: "Compartilhe documentos e dados sensíveis somente em canais adequados. O formulário abaixo não envia solicitações.",
+                  text: "Informe apenas o necessário para contextualizar sua solicitação. Compartilhe documentos e dados sensíveis somente em canais adequados.",
                 },
               ].map((channel) => (
                 <div key={channel.title}>
@@ -88,8 +88,8 @@ export default function ContactPage() {
         title={"Antes de iniciar\na conversa."}
         items={[
           {
-            title: "Posso enviar minha solicitação por este formulário?",
-            text: "Não. O formulário permite conferir os campos no navegador, mas o envio de solicitações está indisponível. Nenhum dado preenchido é transmitido ou salvo em um serviço receptor. Use apenas dados fictícios.",
+            title: "Como escolher a modalidade mais adequada?",
+            text: "Comece pelo que deseja proteger e pelo tipo de orientação que procura. As páginas de cada modalidade apresentam objetivos, situações comuns e pontos para avaliar antes de comparar propostas.",
           },
           {
             title: "Quais informações preciso preparar?",
@@ -97,7 +97,7 @@ export default function ContactPage() {
           },
           {
             title: "Preencher o formulário significa contratar?",
-            text: "Não. O formulário não envia solicitações, e uma cotação também não representa contratação. A decisão depende da análise da proposta, da documentação e das condições do produto escolhido.",
+            text: "Não. Uma cotação não representa contratação. A decisão depende da análise da proposta, da documentação e das condições do produto escolhido.",
           },
         ]}
       />

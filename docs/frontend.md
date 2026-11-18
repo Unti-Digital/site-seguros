@@ -21,7 +21,7 @@ Revisão editorial atual: ver content-and-seo.md. Conteúdo público institucion
 ampliado, títulos e descrições por modalidade, novas ligações contextuais e crédito
 Unti Digital no footer. O layout da Home foi preservado; seus textos foram
 atualizados por autorização específica. Pendências editoriais não são exibidas
-como etiquetas públicas; avisos de funcionamento e privacidade permanecem.
+como etiquetas públicas; o aviso de privacidade permanece acessível.
 Next.js com App Router em frontend/src/app/, TypeScript estrito, ESLint e
 Tailwind CSS. Alias @/* aponta para src/*. Versões instaladas no package-lock.json.
 
@@ -57,7 +57,7 @@ CSS convivem com a curva vetorial oficial exportada do PDF; ver visual-assets.md
 As oito modalidades seguem a solicitação da terceira etapa. Apresentação,
 descrições, processo e FAQ são provisórios; não há números, parcerias, contatos
 ou condições comerciais inventados. O formulário inline e o modal permitem
-validar campos, mas deixam explícita a integração de envio pendente.
+validar e revisar campos; a integração de envio permanece pendente e documentada.
 
 ## Responsividade e acessibilidade
 Grid de soluções com quatro colunas no desktop e duas no tablet/mobile.

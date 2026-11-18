@@ -40,6 +40,6 @@ export function validateContact(values: ContactValues): ContactErrors {
     errors.message = "Escreva uma mensagem entre 10 e 2.000 caracteres.";
   if (!values.consent)
     errors.consent =
-      "Confirme que compreendeu o funcionamento do formulário.";
+      "Confirme que leu o aviso de privacidade e revisou as informações.";
   return errors;
 }

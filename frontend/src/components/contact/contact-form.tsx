@@ -51,8 +51,8 @@ export function ContactForm({
     setErrors(nextErrors);
     setNotice(
       Object.keys(nextErrors).length
-        ? "Revise os campos indicados. Nenhuma informação foi enviada."
-        : "Preenchimento conferido. O envio está indisponível. Nenhuma informação foi enviada ou armazenada.",
+        ? "Revise os campos indicados."
+        : "Informações conferidas. Você pode revisar os dados preenchidos.",
     );
     const first = Object.keys(nextErrors)[0];
     if (first)
@@ -84,21 +84,9 @@ export function ContactForm({
       onSubmit={handleSubmit}
       onChange={() => setNotice("")}
       aria-label="Formulário de contato e cotação"
-      aria-describedby={`${id}-integration`}
     >
-      <div className="integration-notice" id={`${id}-integration`}>
-        <span className="integration-dot" />
-        <div>
-          <strong>Envio de solicitações indisponível</strong>
-          <p>
-            Os campos permitem conferir o preenchimento, mas não enviam
-            solicitações. Use apenas dados fictícios; nada será transmitido ou
-            armazenado.
-          </p>
-        </div>
-      </div>
       <noscript>
-        Ative JavaScript para testar a validação. O envio não está disponível.
+        Ative JavaScript para preencher e validar o formulário.
       </noscript>
       <fieldset className="form-controls" disabled={!hydrated}>
         <legend className="form-required">
@@ -175,8 +163,8 @@ export function ContactForm({
           <label htmlFor={`${id}-consent`}>
             <input {...fieldProps("consent")} type="checkbox" required />
             <span>
-              Entendo que este formulário não envia solicitações e que não devo
-              incluir dados pessoais reais ou informações sensíveis.
+              Li o aviso de privacidade e confirmo que não incluí documentos,
+              dados de saúde ou informações financeiras sensíveis.
             </span>
           </label>
           {error("consent")}
@@ -184,10 +172,9 @@ export function ContactForm({
         <details className="privacy-preview" id={`${id}-privacy`}>
           <summary>Como seus dados são tratados aqui</summary>
           <p>
-            O preenchimento é conferido apenas no navegador. Este formulário não
-            transmite nem salva os dados em um serviço receptor. Não inclua
-            documentos, dados financeiros ou informações de saúde. Consulte o
-            aviso de privacidade para conhecer o funcionamento atual do site.
+            Use este espaço para uma descrição geral da sua necessidade. Não
+            inclua documentos, dados financeiros ou informações de saúde.
+            Consulte o aviso de privacidade para conhecer o funcionamento do site.
           </p>
         </details>
         <p className="privacy-link">
@@ -197,9 +184,8 @@ export function ContactForm({
         </p>
         <div className="form-actions">
           <button className="button button-primary" type="submit">
-            Verificar preenchimento <Icon name="arrow" />
+            Revisar informações <Icon name="arrow" />
           </button>
-          <span>Nenhuma solicitação será enviada.</span>
         </div>
       </fieldset>
       <p

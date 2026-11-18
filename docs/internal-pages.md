@@ -30,6 +30,10 @@ Estilos exclusivos em app/internal.css. O CSS da Home e seus sete componentes
 de seção não foram alterados. Shell e comportamento de navegação foram elevados
 ao layout raiz para não duplicar providers, header ou footer.
 
+InterestSection reutiliza o mesmo ContactForm da Home. Nas rotas internas, o
+formulário recebe um card próprio com padding responsivo, borda, raio e sombra
+suave para se destacar sobre o fundo Gelo sem encostar os campos nas bordas.
+
 São quatro composições de hero (dividido, editorial, invertido e panorâmico),
 três apresentações de possibilidades (cards, lista e bento) e alternância de
 fundos oficiais. Sobre usa manifesto, compromissos e painel de marca; Contato

@@ -29,7 +29,6 @@ import {
   type ChatAnswers,
   type StepId,
 } from "@/lib/chatbot-flow";
-import { chatbotDeliveryStatus } from "@/lib/chatbot-service";
 
 export const chatOpenEvent = "nova-proposta:chat-open";
 
@@ -246,7 +245,7 @@ export function Chatbot() {
       setError(validation.errors[first] ?? "Confira sua resposta.");
       return;
     }
-    setNotice(`Revisão local concluída. ${chatbotDeliveryStatus().message}`);
+    setNotice("Revisão concluída. Você pode corrigir qualquer resposta.");
   }
   function trapFocus(event: KeyboardEvent<HTMLDialogElement>) {
     if (event.key !== "Tab") return;
@@ -296,7 +295,6 @@ export function Chatbot() {
         id="nova-chat"
         className="chat-panel"
         aria-labelledby="chat-title"
-        aria-describedby="chat-disclaimer"
         onKeyDown={trapFocus}
         onCancel={(event) => {
           event.preventDefault();
@@ -342,10 +340,6 @@ export function Chatbot() {
           >
             <Icon name="close" />
           </button>
-        </div>
-        <div id="chat-disclaimer" className="chat-disclaimer">
-          <span />
-          Demonstração local. Use dados fictícios. Nenhum envio disponível.
         </div>
         <div className="chat-progress">
           <span>
@@ -439,9 +433,8 @@ export function Chatbot() {
                   ))}
               </dl>
               <p className="chat-destinations">
-                Destinos previstos:{" "}
+                Canais selecionados:{" "}
                 <strong>{destinationsFor(answers.flow).join(" e ")}</strong>.
-                Transmissão desativada.
               </p>
             </div>
           )}
@@ -486,13 +479,10 @@ export function Chatbot() {
                   data-chat-focus
                   onClick={review}
                 >
-                  Concluir revisão local <Icon name="check" />
-                </button>
-                <button type="button" className="chat-send-disabled" disabled>
-                  Envio indisponível
+                  Concluir revisão <Icon name="check" />
                 </button>
                 <p role="status" aria-live="polite">
-                  {notice || "Nenhum atendimento será registrado nesta versão."}
+                  {notice || "Confira os dados antes de concluir a revisão."}
                 </p>
               </div>
             ) : choices.length ? (
@@ -534,8 +524,9 @@ export function Chatbot() {
                         aria-describedby={error ? "chat-error" : undefined}
                       />
                       <span>
-                        Entendi os destinos previstos e que esta demonstração
-                        não envia dados. Não incluirei dados reais ou sensíveis.
+                        Li o aviso de privacidade e confirmo que não incluí
+                        documentos, dados de saúde ou informações financeiras
+                        sensíveis.
                       </span>
                     </label>
                     <Link
@@ -614,7 +605,7 @@ export function Chatbot() {
                         ? "Inclua o DDD. Ex.: (11) 98765-4321."
                         : step === "message"
                           ? "Até 2.000 caracteres. Não inclua documentos ou dados de saúde."
-                          : "Use somente informações fictícias para testar."}
+                          : "Confira a informação antes de continuar."}
                     </p>
                   </>
                 )}

@@ -7,9 +7,10 @@ o formulário e o modal de cotação existentes permanecem preservados.
 
 O botão flutuante abre uma conversa em dialog nativo, com logotipo oficial,
 mensagens diferenciadas, escolhas, campo de texto, progresso e revisão. O site
-identifica o assistente como virtual e informa desde a abertura que o envio está
-desativado e que devem ser usados apenas dados fictícios. Não existe promessa
-de atendimento humano imediato, protocolo, confirmação de recebimento ou envio falso.
+identifica o assistente como virtual. Em 18/11/2026 foram removidos da interface
+os avisos de envio indisponível, demonstração local e uso de dados fictícios.
+A revisão usa linguagem neutra e não apresenta protocolo, confirmação de
+recebimento ou mensagem de sucesso.
 
 ## Organização
 - `src/components/chatbot/chatbot.tsx`: interface global, histórico, foco, ciclo
@@ -58,8 +59,9 @@ inválidas impedem avanço. Voltar preenche a resposta anterior. Corrigir, na re
 retoma a pergunta correspondente; as próximas respostas permanecem preenchidas.
 Mudança de fluxo limpa respostas incompatíveis. Alterar dados invalida a ciência
 de privacidade, exigindo nova confirmação. Reiniciar pede confirmação e apaga o
-rascunho em memória. Concluir revisão local confirma somente a revisão, mantendo
-o aviso de que nenhum atendimento foi registrado e o botão de envio desabilitado.
+rascunho em memória. Concluir revisão confirma somente a revisão, mantendo
+as respostas disponíveis para correção. Não há botão de envio ou mensagem de
+atendimento registrado.
 
 ## Estado, acessibilidade e interfaces existentes
 Respostas e texto ainda não confirmado ficam apenas no estado React. Fechar por
@@ -121,9 +123,10 @@ endpoint real, limitar o corpo HTTP antes de JSON parsing, validar content-type,
 configurar origem confiável e infraestrutura persistente e revisar abuso/proxy.
 
 ## Privacidade, retenção e próximos passos
-A caixa atual é ciência da demonstração, não prova jurídica de consentimento de
-coleta. O gateway exige um verificador adicional do consentimento operacional;
-somente a caixa local não habilita envio. Antes de integrar:
+A caixa atual confirma a leitura do aviso de privacidade e o cuidado com dados
+sensíveis; não é prova jurídica de consentimento de coleta. O gateway exige um
+verificador adicional do consentimento operacional; somente a caixa local não
+habilita envio. Antes de integrar:
 1. Confirmar destinatário oficial, número de WhatsApp e responsáveis por fluxo.
 2. Definir controlador, finalidades/bases legais, destinatários, retenção,
    descarte, direitos dos titulares e política definitiva; atualizar o aviso.

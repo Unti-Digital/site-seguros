@@ -17,13 +17,16 @@ Avisos editoriais de conteúdo provisório e legendas IMAGEM ILUSTRATIVA foram
 substituídos por conteúdo útil. O caráter de fotografia de banco permanece
 documentado em visual-assets.md. Não se pressupõe vínculo ou endosso.
 
-Exceções necessárias: os formulários informam claramente envio indisponível,
-verificação local e uso exclusivo de dados fictícios; a caixa agora registra
-apenas ciência desse funcionamento, sem simular consentimento de coleta real.
+Os avisos de envio indisponível, demonstração local e uso de dados fictícios foram
+removidos da interface em 18/11/2026. Formulário e chatbot usam linguagem de
+revisão, sem mensagem de sucesso ou afirmação de recebimento. A caixa registra
+ciência do aviso de privacidade e cuidado com dados sensíveis, sem simular prova
+jurídica de consentimento.
 A página de privacidade preserva aviso de documento não definitivo, noindex e
 exclusão do sitemap. As lacunas operacionais e jurídicas não foram ocultadas
 por declarações falsas de conformidade. Não houve habilitação de indexação,
-integração, analytics ou envio real nesta revisão.
+integração, analytics ou envio real nesta revisão; essa limitação permanece
+registrada na documentação técnica.
 
 ## Fontes de orientação geral
 - [SUSEP: como escolher um seguro](https://www.gov.br/susep/pt-br/assuntos/meu-futuro-seguro/seguros-previdencia-e-capitalizacao/seguros/informacoes-importantes).

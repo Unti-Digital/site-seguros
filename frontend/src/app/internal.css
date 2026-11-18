@@ -486,6 +486,14 @@
 .internal-interest {
   margin-top: 75px;
 }
+.internal-interest .contact-form {
+  padding: clamp(26px, 3vw, 38px);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--color-branco);
+  box-shadow: 0 20px 55px
+    color-mix(in srgb, var(--color-azul-profundo) 8%, transparent);
+}
 .related-grid {
   margin-top: 40px;
 }
@@ -1029,6 +1037,10 @@
   }
   .internal-interest {
     margin-top: 45px;
+  }
+  .internal-interest .contact-form {
+    padding: 24px 20px;
+    border-radius: 12px;
   }
   .insurance-card-photo {
     height: 220px;

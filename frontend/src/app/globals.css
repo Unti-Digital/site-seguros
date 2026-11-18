@@ -1865,7 +1865,7 @@ svg {
 }
 .contact-form {
   min-width: 0;
-  background: var(--color-branco);
+  background: transparent;
 }
 .form-controls {
   border: 0;
@@ -1878,35 +1878,6 @@ svg {
   color: var(--muted);
   margin-bottom: 17px;
   padding: 0;
-}
-.integration-notice {
-  display: flex;
-  gap: 11px;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  background: var(--color-gelo);
-  padding: 14px 15px;
-  margin-bottom: 22px;
-}
-.integration-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-vermelho-cuidado);
-  flex-shrink: 0;
-  margin-top: 5px;
-}
-.integration-notice strong {
-  color: var(--color-azul-profundo);
-  font-size: 11px;
-  font-weight: 700;
-  display: block;
-}
-.integration-notice p {
-  margin-top: 6px;
-  font-size: 11px;
-  line-height: 1.7;
-  color: var(--muted);
 }
 .form-grid {
   display: grid;
@@ -2022,10 +1993,6 @@ svg {
   flex-wrap: wrap;
   gap: 15px;
   margin-top: 23px;
-}
-.form-actions > span {
-  font-size: 10px;
-  color: var(--muted);
 }
 .form-status {
   font-size: 12px;

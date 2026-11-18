@@ -1,13 +1,19 @@
 # Contato, cotação e modal reutilizáveis
 
-## Atualização editorial vigente
-O aviso público agora diz "Envio de solicitações indisponível", sem linguagem
-de desenvolvimento. A caixa obrigatória confirma ciência de que o formulário
-não envia e de que só devem ser usados dados fictícios; não simula autorização
-de coleta real. O link usa "Consultar a política de privacidade". A página de
-destino preserva o aviso de política não definitiva. Detalhes em content-and-seo.md.
-As descrições históricas abaixo sobre prévia de consentimento são substituídas
-por esse comportamento; integração e validação no servidor continuam pendentes.
+## Atualização visual vigente — 18/11/2026
+Removidos da interface os avisos de envio indisponível, demonstração local e uso
+de dados fictícios. O formulário compartilhado usa fundo transparente para se
+integrar à seção, mantendo os campos brancos; dentro do modal, herda o fundo do
+dialog. Nas páginas internas, o wrapper `internal-interest` apresenta o formulário
+como um card com respiro, borda, cantos arredondados e sombra suave, evitando o
+aspecto de uma caixa branca colada aos campos. A caixa obrigatória confirma a
+leitura do aviso de privacidade e orienta
+a não incluir documentos ou dados sensíveis. O botão e o status comunicam somente
+a revisão das informações, sem afirmar entrega ou recebimento.
+
+A mudança é editorial e visual: endpoint, integração e validação no servidor
+continuam pendentes. A página de destino preserva o aviso de política não
+definitiva. Detalhes em content-and-seo.md.
 
 ## Escopo implementado
 A Home e as páginas internas formam o frontend institucional. Não há endpoint,
@@ -37,16 +43,16 @@ Cada abertura reinicia o formulário do modal. O formulário inline é independe
 
 ## Validação e desenvolvimento
 Campos obrigatórios: nome completo, telefone com DDD, e-mail, modalidade conhecida,
-mensagem (10 a 2000 caracteres) e autorização de contato não pré-marcada.
+mensagem (10 a 2000 caracteres) e ciência do aviso de privacidade não pré-marcada.
 Aceita nome com letras Unicode e telefone nacional ou prefixo +55. Não coleta
 CPF, dados de saúde, documentos ou anexos. O texto pede que não sejam incluídos
-dados sensíveis e que se usem apenas dados fictícios nesta prévia.
+documentos, dados de saúde ou informações financeiras sensíveis.
 
 Erros ficam associados por aria-describedby/aria-invalid. O primeiro campo inválido
 recebe foco e um status acessível informa a revisão necessária. O botão chama-se
-Verificar preenchimento. Quando os campos estão válidos, a mensagem confirma
-apenas a conferência, mantendo explícito que nada foi enviado ou armazenado.
-Não há tela de sucesso de envio, fetch, action de servidor ou persistência.
+Revisar informações. Quando os campos estão válidos, a mensagem confirma somente
+a conferência e permite nova revisão. Não há tela de sucesso de envio, fetch,
+action de servidor ou persistência.
 
 Os controles ficam desabilitados na renderização sem hidratação. Isso evita o
 envio GET nativo involuntário em caso de JavaScript ausente/falho. Depois da
@@ -54,9 +60,9 @@ hidratação, onSubmit sempre impede a navegação e executa apenas validação 
 Não foram adicionados pacotes de formulário ou schema.
 
 ## Privacidade pendente
-A autorização da interface é uma prévia de consentimento específica para retorno
-à solicitação, sem marketing e sem caixa pré-marcada. Não é registro jurídico de
-consentimento nem declaração de conformidade para produção.
+A caixa da interface registra ciência do aviso e cuidado com dados sensíveis,
+sem marketing e sem marcação prévia. Não é registro jurídico de consentimento
+nem declaração de conformidade para produção.
 O formulário mantém um disclosure explicativo e um link para o rascunho real em
 /politica-de-privacidade, identificado como provisório e marcado noindex.
 Ao seguir esse link de dentro do modal, ele é fechado e a rolagem é desbloqueada

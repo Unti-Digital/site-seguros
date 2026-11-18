@@ -124,9 +124,9 @@ export function questionFor(step: StepId, answers: ChatAnswers) {
     name: "Como você se chama? Informe nome e sobrenome.",
     phone: "Qual é o seu telefone com DDD?",
     email: "Qual é o seu e-mail?",
-    consent: `Os destinos previstos para este atendimento são: ${destinationsFor(answers.flow).join(" e ")}. A finalidade será responder à sua solicitação. Hoje o envio está desativado: esta conversa é apenas uma demonstração local, sem transmissão ou registro de atendimento.`,
+    consent: `Os canais previstos para este atendimento são: ${destinationsFor(answers.flow).join(" e ")}. A finalidade é responder à sua solicitação. Confirme que leu o aviso de privacidade e revise as informações antes de continuar.`,
     review:
-      "Confira suas informações. Você pode corrigir qualquer resposta antes de concluir a revisão local.",
+      "Confira suas informações. Você pode corrigir qualquer resposta antes de concluir a revisão.",
   };
   return questions[step];
 }
@@ -135,7 +135,7 @@ export function displayAnswer(
   value: string,
   answers: ChatAnswers,
 ) {
-  if (step === "consent") return "Entendi como funciona esta demonstração.";
+  if (step === "consent") return "Li o aviso de privacidade.";
   return (
     choicesFor(step, answers).find((item) => item.value === value)?.label ||
     value ||

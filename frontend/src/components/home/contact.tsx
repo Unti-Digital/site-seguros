@@ -40,8 +40,7 @@ export function Contact() {
             <h3>Vamos nos conectar.</h3>
             <p>
               Conheça as modalidades, reúna suas perguntas e confira o que
-              considerar antes de solicitar uma cotação. O envio de solicitações
-              pelo site está indisponível.
+              considerar antes de solicitar uma cotação.
             </p>
           </div>
           <div className="channel-status">
@@ -72,8 +71,8 @@ export function Contact() {
               possibilidades.
             </p>
             <p className="fine-print">
-              O formulário não envia solicitações. Use apenas dados fictícios e
-              não inclua documentos ou informações sensíveis.
+              Descreva sua necessidade de forma geral. Não inclua documentos,
+              dados de saúde ou informações financeiras sensíveis.
             </p>
           </div>
           <ContactForm />
