@@ -1,20 +1,16 @@
 # Execução e deploy
 
-## Homologação na Vercel
-Primeiro deploy realizado em 15/11/2026 no projeto `nova-proposta-seguros`, no
-escopo `unti-digital`. Como foi o primeiro deploy do projeto, a Vercel o atribuiu
-automaticamente ao alvo production. O alias atual é
-<https://nova-proposta-seguros.vercel.app>; a proteção de acesso da Vercel está
-ativa, portanto o endereço exige autenticação autorizada da equipe.
+## Produção na Vercel
+Estado confirmado em 25/11/2026: o projeto operacional é `frontend-ooh5`, no
+escopo `unti-digital`, com o alias público
+<https://frontend-ooh5.vercel.app>. A branch `main` do repositório GitHub está
+integrada à Vercel e gera deployments automáticos de produção.
 
-O primeiro deploy foi enviado a partir de `frontend/` pela CLI, sem integração
-automática com o repositório. `SITE_INDEXING_ENABLED=false` foi aplicado no build e no runtime; `SITE_URL`
-permanece ausente. O build remoto concluiu com status Ready e gerou as 17 rotas
-estáticas esperadas. O aplicativo não depende de arquivos fora de frontend/ para
-executar ou compilar; docs/ e references/ são contexto.
-
-Ao conectar futuramente o repositório GitHub à Vercel, selecionar **Root Directory:
-frontend** e **Framework Preset: Next.js**.
+O deployment do commit `687f7ec` concluiu com status Ready e manteve os aliases
+`frontend-ooh5.vercel.app`, `frontend-ooh5-unti-digital.vercel.app` e
+`frontend-ooh5-git-main-unti-digital.vercel.app`. O aplicativo não depende de
+arquivos fora de `frontend/` para executar ou compilar; `docs/` e `references/`
+são contexto. Preservar **Root Directory: frontend** e **Framework Preset: Next.js**.
 
 | Configuração | Valor |
 | --- | --- |
@@ -48,8 +44,9 @@ Fontes oficiais consultadas em 14/11/2026:
 - [Cabeçalhos de Preview, incluindo noindex](https://vercel.com/docs/headers/response-headers).
 
 O remoto `origin` aponta para o repositório privado
-<https://github.com/Unti-Digital/site-seguros.git>. Não há domínio próprio nem
-integração de deploy automático configurada.
+<https://github.com/Unti-Digital/site-seguros.git> e está conectado ao projeto
+`frontend-ooh5`. Pushes em `main` publicam produção automaticamente. Não há
+domínio próprio configurado.
 
 ## Ambiente local
 Node.js 24 LTS utilizado na preparação; npm com lockfile em frontend/.
@@ -60,8 +57,8 @@ No PowerShell com scripts bloqueados, usar npm.cmd.
 ## Produção
 Executar as verificações de testing.md e npm run start para servir o build.
 O build precisa de acesso ao Google Fonts para resolver Inter.
-O projeto de homologação está configurado na Vercel. Produção operacional,
-domínio próprio e automação por repositório continuam pendentes.
+O projeto de produção está operacional na Vercel e automatizado pelo repositório.
+Domínio próprio continua pendente.
 
 Pendentes: domínio, CI/CD, variáveis por ambiente, infraestrutura
 WordPress, observabilidade, backups e publicação/revalidação.
