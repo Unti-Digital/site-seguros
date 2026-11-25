@@ -7,6 +7,7 @@ import {
   useState,
   type FormEvent,
   type KeyboardEvent,
+  type PointerEvent,
 } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -14,6 +15,7 @@ import Link from "next/link";
 import { Icon } from "@/components/ui/icon";
 import { serviceForPath, serviceOptions } from "@/lib/service-options";
 import { announceOverlay, overlayEvent } from "@/lib/overlay-events";
+import { isDialogBackdropPointer } from "@/lib/dialog-interactions";
 import {
   chatSteps,
   choicesFor,
@@ -42,6 +44,7 @@ export function Chatbot() {
   const unlock = useRef<(() => void) | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const exitAnimation = useRef<Animation | null>(null);
+  const backdropPointer = useRef<number | null>(null);
   const [open, setOpen] = useState(false);
   const [answers, setAnswers] = useState<ChatAnswers>({});
   const [index, setIndex] = useState(0);
@@ -62,7 +65,7 @@ export function Chatbot() {
     setBusy(false);
     unlock.current?.();
     unlock.current = null;
-    panel.current?.close();
+    if (panel.current?.open) panel.current.close();
     setOpen(false);
   }, []);
 
@@ -76,6 +79,7 @@ export function Chatbot() {
       finishClose();
       return;
     }
+    dialog.getAnimations().forEach((animation) => animation.cancel());
     const animation = dialog.animate(
       [
         { opacity: 1, transform: "translateY(0)" },
@@ -267,6 +271,28 @@ export function Chatbot() {
       first?.focus();
     }
   }
+  function onBackdropPointerDown(event: PointerEvent<HTMLDialogElement>) {
+    backdropPointer.current = isDialogBackdropPointer(
+      event.currentTarget,
+      event.target,
+      event.clientX,
+      event.clientY,
+    )
+      ? event.pointerId
+      : null;
+  }
+  function onBackdropPointerUp(event: PointerEvent<HTMLDialogElement>) {
+    const shouldClose =
+      backdropPointer.current === event.pointerId &&
+      isDialogBackdropPointer(
+        event.currentTarget,
+        event.target,
+        event.clientX,
+        event.clientY,
+      );
+    backdropPointer.current = null;
+    if (shouldClose) close();
+  }
 
   return (
     <>
@@ -296,6 +322,11 @@ export function Chatbot() {
         className="chat-panel"
         aria-labelledby="chat-title"
         onKeyDown={trapFocus}
+        onPointerDown={onBackdropPointerDown}
+        onPointerUp={onBackdropPointerUp}
+        onPointerCancel={() => {
+          backdropPointer.current = null;
+        }}
         onCancel={(event) => {
           event.preventDefault();
           close();

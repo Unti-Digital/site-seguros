@@ -36,10 +36,14 @@ inline recebe initialService. O conteúdo permanece em componentes de servidor.
 
 O modal usa dialog.showModal(): camada modal nativa, fundo inerte e nome/descrição
 acessíveis. Foco inicial no botão Fechar; Tab/Shift+Tab circulam apenas nos controles
-visíveis; fechamento por botão, Escape ou clique fora do retângulo do dialog.
+visíveis; fechamento por botão, Escape ou ponteiro fora do retângulo do dialog.
+O fechamento externo exige pointerdown e pointerup no backdrop, funcionando com
+mouse e toque sem fechar ao interagir ou arrastar a partir de um campo.
 O fundo tem rolagem bloqueada e a posição é restaurada ao fechar. O foco retorna
 ao acionador; se ele estava no menu mobile agora oculto, retorna ao botão do menu.
-Cada abertura reinicia o formulário do modal. O formulário inline é independente.
+Se o formulário do modal foi alterado, botão Fechar, Escape e backdrop pedem
+confirmação antes de descartar os dados. Cada abertura concluída reinicia o
+formulário do modal. O formulário inline é independente.
 
 ## Validação e desenvolvimento
 Campos obrigatórios: nome completo, telefone com DDD, e-mail, modalidade conhecida,

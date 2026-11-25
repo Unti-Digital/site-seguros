@@ -21,9 +21,11 @@ const subscribe = () => () => {};
 export function ContactForm({
   initialService = "",
   onPolicyNavigate,
+  onDirtyChange,
 }: {
   initialService?: string;
   onPolicyNavigate?: () => void;
+  onDirtyChange?: (dirty: boolean) => void;
 }) {
   const id = useId();
   const hydrated = useSyncExternalStore(
@@ -32,6 +34,7 @@ export function ContactForm({
     () => false,
   );
   const form = useRef<HTMLFormElement>(null);
+  const dirty = useRef(false);
   const [errors, setErrors] = useState<ContactErrors>({});
   const [notice, setNotice] = useState("");
 
@@ -82,7 +85,13 @@ export function ContactForm({
       className="contact-form"
       noValidate
       onSubmit={handleSubmit}
-      onChange={() => setNotice("")}
+      onChange={() => {
+        setNotice("");
+        if (!dirty.current) {
+          dirty.current = true;
+          onDirtyChange?.(true);
+        }
+      }}
       aria-label="Formulário de contato e cotação"
     >
       <noscript>

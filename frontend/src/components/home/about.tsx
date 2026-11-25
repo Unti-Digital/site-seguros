@@ -11,7 +11,7 @@ export function About() {
         <div className="about-art" aria-hidden="true">
           <Image
             className="about-photo"
-            src="/images/atendimento-consultivo-kampus-8439657.webp"
+            src="/images/home-consultoria-8441811.webp"
             alt=""
             fill
             sizes="(max-width: 699px) 100vw, 50vw"

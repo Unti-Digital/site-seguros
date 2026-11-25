@@ -1,15 +1,35 @@
 "use client";
 
 import { useEffect } from "react";
-import { motionTokens as motion } from "@/lib/motion";
 import { usePathname } from "next/navigation";
+import { motionTokens as motion } from "@/lib/motion";
 
-/** Native, one-shot motion. Content is visible without JS and reduced motion cancels all effects. */
+type RevealDirection = "up" | "left" | "right";
+
+const revealTargets = [
+  "main .section-top",
+  "main .solution-card",
+  "main .about-art",
+  "main .about-copy",
+  "main .benefits-grid > :first-child",
+  "main .benefit-row",
+  "main .process-step",
+  "main .contact-panel",
+  "main .contact-channels",
+  "main .inline-contact > div",
+  "main .inline-contact > form",
+  "main .faq-grid > div",
+  "main [data-reveal]",
+].join(", ");
+
+/** Native, one-shot motion. Content stays visible without JS and under reduced motion. */
 export function MotionEnhancements() {
   const pathname = usePathname();
+
   useEffect(() => {
     if (!("IntersectionObserver" in window) || !Element.prototype.animate)
       return;
+
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const completed = new Set<Element>();
     const active = new Set<Animation>();
@@ -34,33 +54,70 @@ export function MotionEnhancements() {
         () => active.delete(animation),
       );
     }
-    function reveal(element: Element, delay = 0) {
+
+    function directionFor(element: HTMLElement): RevealDirection {
+      const explicit = element.dataset.reveal;
+      if (explicit === "left" || explicit === "right" || explicit === "up")
+        return explicit;
+      if (
+        element.matches(
+          ".about-art, .contact-panel, .inline-contact-intro, .contact-page-aside",
+        )
+      )
+        return "left";
+      if (
+        element.matches(
+          ".about-copy, .contact-channels, .inline-contact > form, .contact-page-form",
+        )
+      )
+        return "right";
+      return "up";
+    }
+
+    function reveal(element: HTMLElement, delay = 0) {
+      const direction = directionFor(element);
+      const distance = motion.revealDistance;
+      const translate =
+        direction === "left"
+          ? `-${distance}px 0`
+          : direction === "right"
+            ? `${distance}px 0`
+            : `0 ${distance}px`;
+      // Individual translate keeps entry motion independent from transform-based hover.
       play(
         element,
         [
-          { opacity: 0, transform: `translateY(${motion.revealDistance}px)` },
-          { opacity: 1, transform: "translateY(0)" },
+          { opacity: 0, translate },
+          { opacity: 1, translate: "0 0" },
         ],
         delay,
       );
     }
+
     function heroSequence() {
       if (heroPlayed || preference.matches) return;
       heroPlayed = true;
-      const copy = document.querySelectorAll(
-        ".hero-copy > .eyebrow, .hero-copy > h1, .hero-description, .hero-copy .hero-actions, .hero-footnote, .inner-hero .eyebrow, .inner-hero h1, .inner-hero .lead, .inner-hero .hero-actions",
+      const copy = document.querySelectorAll<HTMLElement>(
+        ".hero-copy > .eyebrow, .hero-copy > h1, .hero-description, .hero-copy .hero-actions, .hero-footnote, .inner-hero .breadcrumbs, .inner-hero-copy > .eyebrow, .inner-hero-copy > h1, .inner-hero-copy > .lead, .inner-hero-copy > .hero-actions",
       );
       copy.forEach((element, index) => {
         completed.add(element);
         reveal(element, index * motion.heroStagger);
       });
-      const visual = document.querySelector(".hero-art, .inner-hero-visual");
+
+      const visual = document.querySelector<HTMLElement>(
+        ".hero-art, .inner-hero-visual",
+      );
       if (visual) {
         completed.add(visual);
+        const fromLeft = Boolean(visual.closest(".inner-hero-reverse"));
         play(
           visual,
           [
-            { opacity: 0, transform: "translateX(28px) scale(.97)" },
+            {
+              opacity: 0,
+              transform: `translateX(${fromLeft ? -28 : 28}px) scale(.97)`,
+            },
             { opacity: 1, transform: "translateX(0) scale(1)" },
           ],
           230,
@@ -69,39 +126,49 @@ export function MotionEnhancements() {
       }
     }
 
-    const targets = document.querySelectorAll<HTMLElement>(
-      "main .section-top, main .solution-card, main .about-art, main .about-copy, main .benefits-grid > div, main .process-step, main .contact-panel, main .contact-channels, main .inline-contact > div, main .inline-contact > form, main .faq-grid > div, main [data-reveal]",
-    );
+    const targets = document.querySelectorAll<HTMLElement>(revealTargets);
+
+    function staggerDelay(element: HTMLElement) {
+      if (!element.matches(".solution-card, .benefit-row, [data-stagger]"))
+        return 0;
+      const parent = element.parentElement;
+      if (!parent) return 0;
+      const index = Array.from(parent.children).indexOf(element);
+      const template = getComputedStyle(parent).gridTemplateColumns;
+      const columns =
+        template === "none"
+          ? Math.min(parent.children.length, 3)
+          : Math.max(1, template.split(" ").filter(Boolean).length);
+      return (index % columns) * motion.cardStagger;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (!entry.isIntersecting) continue;
           observer.unobserve(entry.target);
           if (preference.matches || completed.has(entry.target)) continue;
+
           completed.add(entry.target);
-          const element = entry.target;
-          let delay = 0;
-          if (element.matches(".solution-card, [data-stagger]")) {
-            const row = Array.from(element.parentElement!.children).indexOf(
-              element,
-            );
-            delay =
-              (row % (window.innerWidth >= 1024 ? 4 : 2)) * motion.cardStagger;
-          }
+          const element = entry.target as HTMLElement;
+          let delay = staggerDelay(element);
+
           if (element.matches(".process-step")) {
-            delay =
-              Array.from(element.parentElement!.children).indexOf(element) *
-              170;
-            const number = element.querySelector(
+            const parent = element.parentElement;
+            delay = parent
+              ? Array.from(parent.children).indexOf(element) * 170
+              : 0;
+            const number = element.querySelector<HTMLElement>(
               ".step-top > span:first-child",
             );
-            const connector = element.querySelector(".step-connector");
+            const connector =
+              element.querySelector<HTMLElement>(".step-connector");
             if (number)
               play(
                 number,
                 [
-                  { opacity: 0, transform: "translateY(18px) scale(.8)" },
-                  { opacity: 1, transform: "translateY(0) scale(1)" },
+                  { opacity: 0, translate: "0 18px", scale: 0.8 },
+                  { opacity: 1, translate: "0 0", scale: 1 },
                 ],
                 delay + 160,
                 850,
@@ -117,15 +184,17 @@ export function MotionEnhancements() {
                 1000,
               );
           }
+
           reveal(element, delay);
-          // A single settling gesture, never a continuous loop or scroll-linked parallax.
-          const graphic = element.querySelector(".brand-ribbon");
+
+          // One settling gesture for institutional graphics; never a looping motion.
+          const graphic = element.querySelector<HTMLElement>(".brand-ribbon");
           if (graphic)
             play(
               graphic,
               [
-                { transform: "translateX(20px)", opacity: 0.65 },
-                { transform: "translateX(0)", opacity: 1 },
+                { translate: "20px 0", opacity: 0.65 },
+                { translate: "0 0", opacity: 1 },
               ],
               delay + 120,
               1150,
@@ -146,6 +215,7 @@ export function MotionEnhancements() {
         });
       }
     }
+
     function onFocus(event: FocusEvent) {
       if (!(event.target instanceof Element)) return;
       for (const target of targets)
@@ -156,12 +226,12 @@ export function MotionEnhancements() {
             .getAnimations({ subtree: true })
             .forEach((animation) => animation.finish());
         }
-      // Hero actions remain immediately visible to a keyboard user.
       event.target
         .closest(".hero-actions")
         ?.getAnimations()
         .forEach((animation) => animation.finish());
     }
+
     updatePreference();
     preference.addEventListener("change", updatePreference);
     document.addEventListener("focusin", onFocus);
@@ -172,5 +242,6 @@ export function MotionEnhancements() {
       active.forEach((animation) => animation.cancel());
     };
   }, [pathname]);
+
   return null;
 }

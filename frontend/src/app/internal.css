@@ -503,11 +503,11 @@
   background: var(--color-branco);
   overflow: hidden;
   transition:
-    transform 250ms,
-    box-shadow 250ms,
-    border-color 250ms;
+    transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 260ms ease,
+    border-color 220ms ease;
 }
-.insurance-card:hover {
+.insurance-card:is(:hover, :focus-within) {
   transform: translateY(-5px);
   border-color: color-mix(in srgb, var(--color-azul-protecao) 35%, transparent);
   box-shadow: 0 18px 35px
@@ -527,7 +527,7 @@
   object-fit: cover;
   transition: transform 500ms;
 }
-.insurance-card:hover .insurance-card-photo img {
+.insurance-card:is(:hover, :focus-within) .insurance-card-photo img {
   transform: scale(1.025);
 }
 .insurance-card-body {
@@ -574,6 +574,20 @@
 .insurance-card-action svg {
   width: 18px;
   height: 18px;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.insurance-card:is(:hover, :focus-within) .insurance-card-action svg {
+  transform: translateX(4px);
+}
+.insurance-card:has(:focus-visible) {
+  outline: 3px solid var(--color-azul-protecao);
+  outline-offset: 4px;
+}
+.insurance-card > a:focus-visible {
+  outline: none;
+}
+.insurance-card:has(a:active) {
+  transform: translateY(-1px) scale(0.995);
 }
 .catalog-intro {
   padding-block: 70px;
@@ -1084,8 +1098,10 @@
   .catalog-navigation a {
     transition: none;
   }
-  .insurance-card:hover,
-  .insurance-card:hover .insurance-card-photo img {
+  .insurance-card:is(:hover, :focus-within),
+  .insurance-card:has(a:active),
+  .insurance-card:is(:hover, :focus-within) .insurance-card-photo img,
+  .insurance-card:is(:hover, :focus-within) .insurance-card-action svg {
     transform: none;
   }
 }

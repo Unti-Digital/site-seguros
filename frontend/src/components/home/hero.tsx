@@ -46,7 +46,7 @@ export function Hero() {
           <div className="art-grid">
             <Image
               className="hero-photo"
-              src="/images/familia-parque-kampus-6182114.webp"
+              src="/images/home-hero-familia-7220931.webp"
               alt=""
               fill
               sizes="(max-width: 699px) 100vw, 50vw"

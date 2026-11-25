@@ -1,137 +1,81 @@
 # Recursos visuais e licenças
 
-## Inventário utilizado na Home
-- Ícones: SVGs locais em `frontend/src/components/ui/icon.tsx`, já presentes na
-  implementação aprovada. Não foram importados de Lucide ou outro pacote;
-  mantidos para preservar o desenho e evitar dependências sem necessidade.
-- Grafismos: CSS local (órbitas, grid e arcos) e grafismo oficial exportado do
-  PDF em `frontend/public/brand/grafismo-curva-oficial.svg`, aplicado no hero,
-  na composição Sobre e no contato. Os logotipos não foram modificados.
-- Tipografia: Inter por `next/font/google`, já configurada no projeto.
-- Fotografia: duas imagens reais da Kampus Production/Pexels, armazenadas
-  localmente como WebP e renderizadas com next/image; detalhes abaixo.
-- Logotipo: quatro SVGs oficiais extraídos diretamente dos traçados do PDF,
-  em frontend/public/logos/. Header e footer usam a principal transparente.
-  Não houve geração, redesenho, recoloração ou vetorização por aproximação.
-  Origem e verificação técnica em logos.md e no manifesto junto aos arquivos.
-- Não foi utilizada geração de imagens por IA.
+## Diretrizes preservadas
 
-## Pesquisa de fotografia — 13/11/2026
-Consultadas as fontes oficiais:
-- [Licença Unsplash](https://unsplash.com/license).
-- [Termos Unsplash](https://unsplash.com/terms), incluindo limites relativos a
-  pessoas, marcas e outros direitos de terceiros.
-- [Licença Pexels](https://www.pexels.com/license/).
+- Logotipos, grafismos oficiais, ícones SVG, paleta e tipografia não foram alterados.
+- As fotografias são ilustrativas e não representam equipe, clientes, sede ou endosso à Nova Proposta Seguros.
+- Não foi utilizada geração nem edição de imagens por inteligência artificial.
+- Todas as fotografias finais são arquivos locais WebP e são renderizadas com `next/image`.
 
-As licenças permitem uso comercial nas condições publicadas e dispensam crédito
-obrigatório. Não autorizam apresentar pessoas ou marcas retratadas como apoiadoras
-da empresa; não tratar uma foto de banco como fotografia da sede ou equipe.
-Não revender cópias sem alteração nem redistribuir como banco concorrente.
-Licença da plataforma não é uma confirmação de adequação de todo retrato para
-qualquer finalidade; conferir o recurso específico antes de incorporar.
+## Licença e uso comercial
 
-### Candidata examinada e não incorporada
-[Modern Glass Facade of Office Building — Nikola Vu, Pexels, foto 36149072](https://www.pexels.com/photo/modern-glass-facade-of-office-building-36149072/).
-A página indica licença Pexels gratuita. A imagem foi baixada apenas para análise
-em diretório temporário e inspecionada visualmente. Mostra fachada corporativa,
-com enquadramento vertical e tons esverdeados/cinzentos. Não se mostrou adequada
-para complementar discretamente o hero aprovado: exigiria substituir ou encobrir
-seus grafismos e reduziria a ligação visual com a identidade atual.
-Por isso não foi incluída em `public/`, nem carregada pelo site.
+Pesquisa e verificação realizadas em 25/11/2026. Todas as fotografias finais são do Pexels e suas páginas individuais indicam conteúdo gratuito. A [Licença Pexels](https://www.pexels.com/license/) permite baixar, usar e modificar fotografias gratuitamente, inclusive em sites. A [orientação oficial para projetos comerciais](https://help.pexels.com/hc/en-us/articles/360042295214-Can-I-use-the-photos-and-videos-for-a-commercial-project) confirma o uso comercial.
 
-Uma referência de Sean Pollock no Unsplash (PhYq704ffdA) também foi pesquisada,
-mas sua página individual não pôde ser acessada pela ferramenta de consulta;
-não foi incorporada sem essa conferência.
+Condições observadas em todo o inventário:
 
-## Fotografias incorporadas nesta evolução
+- atribuição não é obrigatória, mas autor e origem permanecem registrados abaixo;
+- não sugerir endosso de pessoas, marcas ou titulares retratados;
+- não revender cópias inalteradas nem redistribuir as fotos como banco de imagens;
+- não usar a fotografia como marca e não retratar pessoas de forma ofensiva;
+- marcas, obras e direitos de terceiros eventualmente retratados continuam sujeitos aos respectivos direitos.
 
-| Aplicação | Arquivo local em public/images/ | Autor e fonte |
-| --- | --- | --- |
-| Sobre: conversa profissional | atendimento-consultivo-kampus-8439657.webp | [Kampus Production / Pexels, foto 8439657](https://www.pexels.com/photo/bearded-man-showing-an-elderly-client-a-document-8439657/) |
-| Hero: família em momento natural | familia-parque-kampus-6182114.webp | [Kampus Production / Pexels, foto 6182114](https://www.pexels.com/photo/a-family-spending-time-together-on-a-park-6182114/) |
+## Inventário de fotografias
 
-As páginas individuais e a [licença Pexels](https://www.pexels.com/license/) foram
-conferidas em 13/11/2026. As duas páginas identificam o conteúdo como gratuito.
-A [orientação oficial para projetos comerciais](https://help.pexels.com/hc/en-us/articles/360042295214-Can-I-use-the-photos-and-videos-for-a-commercial-project)
-permite uso em sites comerciais, sem implicar endosso das pessoas retratadas.
-Não se apresentam como equipe, sede, clientes ou depoimentos da Nova Proposta.
-As imagens foram inspecionadas; não há marcas identificáveis aplicadas à composição.
+| Página e seção | Arquivo local em `frontend/public/images/` | Autor e banco | Fotografia original | Licença e condições |
+| --- | --- | --- | --- | --- |
+| Home — hero | `home-hero-familia-7220931.webp` | Pavel Danilyuk / Pexels | [Foto 7220931](https://www.pexels.com/photo/a-family-bonding-inside-the-playroom-7220931/) | Pexels; uso comercial permitido, sem atribuição obrigatória e sem implicar endosso |
+| Home — Sobre | `home-consultoria-8441811.webp` | Kampus Production / Pexels | [Foto 8441811](https://www.pexels.com/photo/an-agent-showing-documents-to-an-elderly-man-8441811/) | Pexels; mesmas condições acima |
+| Sobre Nós — hero | `sobre-equipe-7495644.webp` | Moe Magners / Pexels | [Foto 7495644](https://www.pexels.com/photo/people-having-a-discussion-at-the-office-7495644/) | Pexels; mesmas condições acima |
+| Seguros — hero | `seguros-solucoes-12899115.webp` | Mizuno K / Pexels | [Foto 12899115](https://www.pexels.com/photo/meeting-in-office-12899115/) | Pexels; mesmas condições acima |
+| Contato — hero | `contato-atendimento-36729962.webp` | Vitaly Gariev / Pexels | [Foto 36729962](https://www.pexels.com/photo/young-couple-meeting-financial-advisor-for-consultation-36729962/) | Pexels; mesmas condições acima |
+| Seguros — card Automóvel | `card-automovel-3042415.webp` | Ricky Esquivel / Pexels | [Foto 3042415](https://www.pexels.com/photo/car-on-the-road-3042415/) | Pexels; mesmas condições acima |
+| Seguro de Automóvel — hero | `hero-automovel-10771710.webp` | Ali Kazal / Pexels | [Foto 10771710](https://www.pexels.com/photo/a-car-on-the-road-10771710/) | Pexels; mesmas condições acima |
+| Seguros — card Plano de Saúde | `card-plano-saude-8556559.webp` | Edmond Dantès / Pexels | [Foto 8556559](https://www.pexels.com/photo/people-doing-stretching-at-the-park-8556559/) | Pexels; mesmas condições acima |
+| Plano de Saúde — hero | `hero-plano-saude-4266936.webp` | Cedric Fauntleroy / Pexels | [Foto 4266936](https://www.pexels.com/photo/a-doctor-talking-to-a-patient-while-holding-a-tablet-4266936/) | Pexels; mesmas condições acima |
+| Seguros — card Consórcio | `card-consorcio-8293700.webp` | RDNE Stock project / Pexels | [Foto 8293700](https://www.pexels.com/photo/happy-couple-holding-and-showing-a-house-key-8293700/) | Pexels; mesmas condições acima |
+| Consórcio — hero | `hero-consorcio-7641899.webp` | Alena Darmel / Pexels | [Foto 7641899](https://www.pexels.com/photo/a-real-estate-agent-handing-the-key-to-the-new-homeowners-7641899/) | Pexels; mesmas condições acima |
+| Seguros — card Vida | `card-vida-4260639.webp` | August de Richelieu / Pexels | [Foto 4260639](https://www.pexels.com/photo/happy-family-sitting-on-a-couch-4260639/) | Pexels; mesmas condições acima |
+| Seguro de Vida — hero | `hero-vida-5801673.webp` | cottonbro studio / Pexels | [Foto 5801673](https://www.pexels.com/photo/a-family-sitting-on-the-sofa-together-5801673/) | Pexels; mesmas condições acima |
+| Seguros — card Seguro Saúde | `card-seguro-saude-4269274.webp` | Cedric Fauntleroy / Pexels | [Foto 4269274](https://www.pexels.com/photo/a-receptionist-and-a-practitioner-at-the-reception-4269274/) | Pexels; mesmas condições acima |
+| Seguro Saúde — hero | `hero-seguro-saude-34159000.webp` | Anhelina Vasylyk / Pexels | [Foto 34159000](https://www.pexels.com/photo/healthcare-professional-consulting-with-patient-34159000/) | Pexels; mesmas condições acima |
+| Seguros — card Empresarial | `card-empresarial-9034703.webp` | RDNE Stock project / Pexels | [Foto 9034703](https://www.pexels.com/photo/photo-of-people-having-a-meeting-at-the-office-9034703/) | Pexels; mesmas condições acima |
+| Seguro Empresarial — hero | `hero-empresarial-8171200.webp` | Kampus Production / Pexels | [Foto 8171200](https://www.pexels.com/photo/colleagues-having-a-meeting-in-the-office-8171200/) | Pexels; mesmas condições acima |
+| Seguros — card Transportes | `card-transportes-4487383.webp` | Tiger Lily / Pexels | [Foto 4487383](https://www.pexels.com/photo/workers-walking-along-aisle-in-warehouse-4487383/) | Pexels; mesmas condições acima |
+| Seguro de Transportes — hero | `hero-transportes-15595843.webp` | Boris Hamer / Pexels | [Foto 15595843](https://www.pexels.com/photo/a-truck-on-an-expressway-15595843/) | Pexels; mesmas condições acima |
+| Seguros — card Engenharia | `card-engenharia-6285154.webp` | Gustavo Fring / Pexels | [Foto 6285154](https://www.pexels.com/photo/engineers-reading-blueprint-6285154/) | Pexels; mesmas condições acima |
+| Seguro de Engenharia — hero | `hero-engenharia-8961026.webp` | Mikael Blomkvist / Pexels | [Foto 8961026](https://www.pexels.com/photo/man-and-woman-working-in-a-construction-site-8961026/) | Pexels; mesmas condições acima |
 
-São imagens ilustrativas complementares ao texto adjacente, com alt vazio dentro
-dos grafismos decorativos e indicação visual de imagem ilustrativa. Sem edição
-por IA. Foram obtidas a 1400 px, codificadas em WebP (qualidade 82) e enquadradas
-por object-fit; cores naturais preservadas no arquivo, com sobreposição CSS nas
-cores oficiais para contraste. Peso aproximado: 47 KB (Sobre) e 123 KB (hero).
-Next/Image gera versões responsivas locais; preload apenas no hero e lazy loading
-em Sobre. O navegador não consulta Pexels/Unsplash durante a visita.
-Proveniência, dimensões e hashes em public/images/photo-sources.json.
+## Exclusividade e duplicidade
 
-## Grafismo do manual
-Origem: página física 1 do PDF oficial, área direita (650 × 1080 unidades).
-Os paths vermelho e azul foram exportados com seus comandos e preenchimentos
-originais. A faixa clara era o fundo Gelo da página: para isolar o grafismo sobre
-fotos/fundos escuros, foi recomposta como uma cópia do path azul transladada 25
-unidades à esquerda, pintada no Gelo original e posicionada sob os demais paths.
-Não houve redesenho dos paths vermelho/azul ou alteração do logo.
+O inventário contém 21 arquivos, 21 IDs de fotografia e 21 aplicações distintas. Cards e heroes das oito modalidades usam fontes diferentes. Nenhuma fotografia é reutilizada em outra seção, página, corte, filtro ou enquadramento.
 
-O SVG decorativo tem viewport adaptável para as três composições, com recortes e
-larguras específicas para desktop/mobile. A adaptação de proporção é exclusiva
-do grafismo; os logos continuam mantendo a proporção natural.
-Registro de origem e hash em public/brand/grafismo-origem.json.
+## Otimização e integração
 
-## Iconografia
-Mantidos os SVGs locais, grade 24 × 24, traço 1,5, pontas e junções arredondadas.
-Seguro Saúde passou a usar escudo com cruz para diferenciá-lo do clipboard de
-Plano de Saúde. Sem pacote Lucide ou geração por IA: a família existente é
-consistente e não justificava substituir todos os ícones ou instalar dependências.
+- Downloads realizados pelo CDN oficial do Pexels em WebP, com enquadramento de 1600 × 1067 px.
+- Os arquivos permanecem locais; o navegador não consulta bancos de imagens.
+- `next/image` fornece variantes responsivas. Apenas o hero da Home usa preload; os demais seguem carregamento sob demanda.
+- `object-fit: cover` e `object-position` são usados somente para adequar o enquadramento ao componente existente.
+- Cores naturais permanecem no arquivo; sobreposições de contraste já existentes no layout foram preservadas.
+- Tamanho, hash SHA-256, origem e aplicação estão registrados em `frontend/public/images/photo-sources.json`.
+
+## Outros recursos visuais preservados
+
+- Grafismo oficial: `frontend/public/brand/grafismo-curva-oficial.svg`, com registro em `frontend/public/brand/grafismo-origem.json`.
+- Logotipos oficiais: `frontend/public/logos/`, sem redesenho, recoloração ou substituição.
+- Ícones: SVGs locais em `frontend/src/components/ui/icon.tsx`.
+- Ícone do WhatsApp: `frontend/public/logos/whatsapp.svg`, conforme documentação de origem existente.
+
+## Validação desta atualização
+
+- 42 capturas revisadas: 14 vistas do site em 390, 768 e 1440 px.
+- O novo hero da Home foi conferido nos três breakpoints: rostos, degradê e card
+  flutuante permanecem legíveis e sem sobreposição inadequada.
+- Enquadramento, legibilidade e carregamento das fotografias conferidos nos três breakpoints.
+- Nenhum overflow horizontal ou prejuízo visual aos componentes foi observado.
+- A auditoria interativa confirmou movimento reduzido, fim das animações, navegação,
+  hover/foco/active, fechamento externo por mouse e toque, foco e preservação do chat.
+- ESLint, TypeScript, build de produção e testes do chatbot executados com sucesso.
 
 ## Pendências
-Validação visual e editorial das fotografias pelo responsável. Não há pendência
-técnica para exibi-las localmente; nenhuma foto de sede/equipe real foi presumida.
 
-## Fotografias das páginas internas — 13/11/2026
-
-| Aplicação | Arquivo em public/images/ | Autor / página de origem |
-| --- | --- | --- |
-| Automóvel | automovel-institucional.webp | [Aedrian Salazar / Pexels 11942041](https://www.pexels.com/photo/a-person-driving-car-on-road-11942041/) |
-| Plano de Saúde | plano-saude-institucional.webp | [Antoni Shkraba / Pexels 5215008](https://www.pexels.com/photo/woman-consulting-a-doctor-5215008/) |
-| Seguro Saúde | seguro-saude-institucional.webp | [Cedric Fauntleroy / Pexels 4266930](https://www.pexels.com/photo/a-woman-talking-to-her-doctor-4266930/) |
-| Empresarial e Sobre | empresarial-institucional.webp | [fauxels / Pexels 3184339](https://www.pexels.com/photo/man-wearing-brown-suit-jacket-3184339/) |
-| Transportes | transportes-institucional.webp | [Tiger Lily / Pexels 4487383](https://www.pexels.com/photo/workers-walking-along-aisle-in-warehouse-4487383/) |
-| Engenharia | engenharia-institucional.webp | [Alejandro Vergara / Pexels 37779772](https://www.pexels.com/photo/female-engineer-inspecting-construction-site-37779772/) |
-
-As páginas de origem indicam uso gratuito sob a [licença Pexels](https://www.pexels.com/license/),
-verificada nesta etapa, que permite uso comercial sujeito às suas restrições.
-Não se presume endosso, vínculo profissional, relação de cliente ou sede da empresa.
-Retratos são ilustrativos; nenhuma identificação, dado de saúde ou história real
-é atribuída às pessoas. Fotografias não foram geradas nem editadas por IA.
-
-Foram inspecionadas visualmente e exportadas em WebP (qualidade 82), entre 62 e
-129 KB. Plano de Saúde foi recortada para excluir uma embalagem de medicamento;
-Transportes, para excluir embalagens com identificação. A escolha dos recortes
-preserva o assunto sem incorporar marcas de terceiros. Coordenadas, dimensões,
-fontes e hashes estão em public/images/photo-sources.json.
-
-Consórcio reaproveita a fotografia consultiva já existente; Vida, a família no
-parque. Os oito assuntos têm oito fotografias distintas, reutilizadas no catálogo
-e na página correspondente. Não há consultas a bancos de imagens no navegador.
-Next/Image utiliza sizes responsivos, preload no hero e carregamento tardio dos
-cards. Imagens complementares decorativas têm alt vazio e os heroes indicam
-visualmente seu caráter ilustrativo. Logos e grafismos oficiais não foram alterados.
-
-## Revisão editorial posterior
-As legendas públicas de imagem ilustrativa foram substituídas por assinaturas
-da marca a pedido do cliente. A origem e o caráter de banco de imagens permanecem
-neste documento. As fotografias das páginas internas têm alt descritivo da cena;
-não identificam as pessoas como equipe ou clientes. O footer incorpora o SVG
-original da Unti Digital fornecido pelo cliente; origem e aplicação em content-and-seo.md.
-
-## Chatbot
-Ícone WhatsApp solicitado em SVG local, sem geração ou redesenho. Fonte:
-[WhatsApp.svg / Wikimedia Commons](https://commons.wikimedia.org/wiki/File:WhatsApp.svg),
-com origem no site oficial registrada na ficha. Download preservado em
-frontend/public/logos/whatsapp.svg; SHA-256
-DD6A4DB2C394CA11AA8AB087369F2F50A12E6F874E49DB7B1D5609D0A8FB28CA.
-A cor própria desse ícone permanece restrita à marca de plataforma solicitada;
-os tokens e a interface do chat mantêm a identidade Nova Proposta. O ícone não
-indica que exista WhatsApp configurado: o envio permanece desativado. Ver chatbot.md.
+Não há pendência de licença ou de fotografia para as posições atualmente existentes no site.

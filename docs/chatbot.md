@@ -74,6 +74,9 @@ recursos de histórico próprios do navegador.
 
 dialog.showModal fornece fundo inerte; há contenção de Tab/Shift+Tab, foco inicial
 e foco na pergunta ativa, restauração ao fechar e bloqueio/restauração da rolagem.
+A conversa fecha por botão, Escape ou pointerdown/pointerup no backdrop, com mouse
+e toque; interações dentro do painel não fecham. Fechar e reabrir preserva a etapa
+e as respostas da sessão, enquanto Reiniciar continua sendo a única ação de descarte.
 Aberturas programáticas são coordenadas: abrir cotação fecha o chat; abrir chat
 fecha o menu; o launcher fica oculto com menu ou cotação abertos. Chat não abre
 por cima de uma cotação ativa. Nenhuma resposta da cotação é apagada por isso.

@@ -20,8 +20,8 @@ export default function AboutPage() {
         title={"Nova Proposta Seguros.\nPessoas antes de produtos."}
         description="Proteger começa por entender o que tem valor na sua vida. É desse encontro entre pessoas, planos e possibilidades que nasce a nossa proposta."
         crumbs={[{ label: "Sobre nós" }]}
-        image="/images/empresarial-institucional.webp"
-        imageAlt="Pessoas compartilham ideias durante uma reunião em um escritório."
+        image="/images/sobre-equipe-7495644.webp"
+        imageAlt="Profissionais compartilham ideias durante uma reunião de equipe."
         layout="reverse"
         tone="light"
       />

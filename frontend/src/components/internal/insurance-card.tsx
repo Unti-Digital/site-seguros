@@ -22,11 +22,11 @@ export function InsuranceCard({
         {!compact && (
           <div className="insurance-card-photo">
             <Image
-              src={item.image}
-              alt={item.imageAlt}
+              src={item.cardImage}
+              alt={item.cardImageAlt}
               fill
               sizes="(max-width: 699px) 100vw, (max-width: 1023px) 50vw, 33vw"
-              style={{ objectPosition: item.imagePosition }}
+              style={{ objectPosition: item.cardImagePosition }}
             />
           </div>
         )}

@@ -118,10 +118,20 @@ body:has(.menu-toggle[aria-expanded="true"]) .chat-launcher {
   background: var(--color-branco);
   color: var(--color-azul-profundo);
   border-radius: 50%;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease;
 }
 .chat-icon-button svg {
   width: 18px;
   height: 18px;
+}
+.chat-icon-button:hover {
+  transform: rotate(90deg);
+  background: var(--color-gelo);
+}
+.chat-icon-button:active {
+  transform: rotate(90deg) scale(0.94);
 }
 .chat-progress {
   padding: 12px 18px 0;
@@ -258,6 +268,13 @@ body:has(.menu-toggle[aria-expanded="true"]) .chat-launcher {
 .chat-choices svg {
   width: 15px;
   height: 15px;
+  transition: transform 180ms ease;
+}
+.chat-choices > button:is(:hover, :focus-visible) svg {
+  transform: translateX(3px);
+}
+.chat-choices > button:active {
+  transform: scale(0.985);
 }
 .chat-context {
   grid-column: 1 / -1;
@@ -320,6 +337,11 @@ body:has(.menu-toggle[aria-expanded="true"]) .chat-launcher {
   font-size: 11px;
   font-weight: 750;
   line-height: 1.5;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 .chat-primary {
   background: var(--color-azul-protecao);
@@ -329,6 +351,10 @@ body:has(.menu-toggle[aria-expanded="true"]) .chat-launcher {
 .chat-primary:hover {
   background: var(--color-azul-profundo);
   border-color: var(--color-azul-profundo);
+}
+.chat-primary:active,
+.chat-secondary:active {
+  transform: scale(0.98);
 }
 .chat-primary:focus-visible {
   outline-offset: 3px;
@@ -552,10 +578,21 @@ body:has(.menu-toggle[aria-expanded="true"]) .chat-launcher {
     animation: none;
   }
   .chat-launcher,
-  .chat-choices > button {
+  .chat-choices > button,
+  .chat-primary,
+  .chat-secondary,
+  .chat-icon-button,
+  .chat-choices svg {
     transition: none;
   }
   .chat-launcher:hover {
+    transform: none;
+  }
+  .chat-icon-button:is(:hover, :active),
+  .chat-choices > button:active,
+  .chat-choices > button:is(:hover, :focus-visible) svg,
+  .chat-primary:active,
+  .chat-secondary:active {
     transform: none;
   }
 }

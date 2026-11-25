@@ -20,8 +20,8 @@ export default function ContactPage() {
         description="Proteção começa com boas perguntas. Identifique o que deseja cuidar, conheça as modalidades e prepare as informações para avaliar uma cotação."
         crumbs={[{ label: "Contato" }]}
         icon="message"
-        image="/images/atendimento-consultivo-kampus-8439657.webp"
-        imageAlt="Duas pessoas conversam e analisam um documento em um ambiente profissional."
+        image="/images/contato-atendimento-36729962.webp"
+        imageAlt="Um casal conversa com uma consultora durante um atendimento."
         imagePosition="48% center"
         layout="split"
         action={false}

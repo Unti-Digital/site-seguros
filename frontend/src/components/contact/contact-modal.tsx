@@ -8,8 +8,8 @@ import {
   useRef,
   useState,
   type ReactNode,
-  type MouseEvent,
   type KeyboardEvent,
+  type PointerEvent,
 } from "react";
 import { ContactForm } from "./contact-form";
 import { Icon } from "@/components/ui/icon";
@@ -17,6 +17,7 @@ import { motionTokens } from "@/lib/motion";
 import { serviceForPath } from "@/lib/service-options";
 import { usePathname } from "next/navigation";
 import { announceOverlay } from "@/lib/overlay-events";
+import { isDialogBackdropPointer } from "@/lib/dialog-interactions";
 
 const ContactContext = createContext<((service?: string) => void) | null>(null);
 
@@ -26,6 +27,9 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
   const closeButton = useRef<HTMLButtonElement>(null);
   const returnFocus = useRef<HTMLElement | null>(null);
   const closing = useRef(false);
+  const exitAnimation = useRef<Animation | null>(null);
+  const backdropPointer = useRef<number | null>(null);
+  const formDirty = useRef(false);
   const restoreScroll = useRef<(() => void) | null>(null);
   const [service, setService] = useState("");
   const [session, setSession] = useState(0);
@@ -34,6 +38,10 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
     (selectedService = "") => {
       const element = dialog.current;
       if (!element || element.open) return;
+      exitAnimation.current?.cancel();
+      exitAnimation.current = null;
+      closing.current = false;
+      formDirty.current = false;
       announceOverlay("quote");
       returnFocus.current =
         document.activeElement instanceof HTMLElement
@@ -78,9 +86,15 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
   const close = useCallback(() => {
     const element = dialog.current;
     if (!element?.open || closing.current) return;
+    if (
+      formDirty.current &&
+      !window.confirm("Descartar as informações preenchidas neste formulário?")
+    )
+      return;
     closing.current = true;
     const finish = () => {
-      element.close();
+      exitAnimation.current = null;
+      if (element.open) element.close();
       closing.current = false;
     };
     if (
@@ -90,6 +104,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
       finish();
       return;
     }
+    element.getAnimations().forEach((animation) => animation.cancel());
     const animation = element.animate(
       [
         { opacity: 1, transform: "translateY(0) scale(1)" },
@@ -97,11 +112,13 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
       ],
       { duration: motionTokens.dialogDuration, easing: "ease-in" },
     );
+    exitAnimation.current = animation;
     void animation.finished.then(finish, finish);
   }, []);
 
   useEffect(
     () => () => {
+      exitAnimation.current?.cancel();
       restoreScroll.current?.();
     },
     [],
@@ -124,16 +141,27 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
         ?.focus({ preventScroll: true });
     }
   }
-  function onBackdrop(event: MouseEvent<HTMLDialogElement>) {
-    if (event.target !== event.currentTarget) return;
-    const bounds = event.currentTarget.getBoundingClientRect();
-    if (
-      event.clientX < bounds.left ||
-      event.clientX > bounds.right ||
-      event.clientY < bounds.top ||
-      event.clientY > bounds.bottom
+  function onBackdropPointerDown(event: PointerEvent<HTMLDialogElement>) {
+    backdropPointer.current = isDialogBackdropPointer(
+      event.currentTarget,
+      event.target,
+      event.clientX,
+      event.clientY,
     )
-      close();
+      ? event.pointerId
+      : null;
+  }
+  function onBackdropPointerUp(event: PointerEvent<HTMLDialogElement>) {
+    const shouldClose =
+      backdropPointer.current === event.pointerId &&
+      isDialogBackdropPointer(
+        event.currentTarget,
+        event.target,
+        event.clientX,
+        event.clientY,
+      );
+    backdropPointer.current = null;
+    if (shouldClose) close();
   }
 
   function onDialogKeyDown(event: KeyboardEvent<HTMLDialogElement>) {
@@ -170,7 +198,11 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
           close();
         }}
         onClose={onClose}
-        onClick={onBackdrop}
+        onPointerDown={onBackdropPointerDown}
+        onPointerUp={onBackdropPointerUp}
+        onPointerCancel={() => {
+          backdropPointer.current = null;
+        }}
         onKeyDown={onDialogKeyDown}
       >
         <div className="modal-heading">
@@ -190,7 +222,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
             type="button"
             className="modal-close"
             aria-label="Fechar formulário de contato"
-            onClick={close}
+            onClick={() => close()}
           >
             <Icon name="close" />
           </button>
@@ -202,7 +234,11 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
         <ContactForm
           key={session}
           initialService={service}
+          onDirtyChange={(dirty) => {
+            formDirty.current = dirty;
+          }}
           onPolicyNavigate={() => {
+            formDirty.current = false;
             restoreScroll.current?.();
             restoreScroll.current = null;
             returnFocus.current = null;

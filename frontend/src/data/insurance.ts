@@ -14,6 +14,9 @@ export type InsurancePage = {
   eyebrow: string;
   image: string;
   imagePosition?: string;
+  cardImage: string;
+  cardImageAlt: string;
+  cardImagePosition?: string;
   layout: "split" | "editorial" | "panorama" | "reverse";
   tone: "dark" | "light";
   featureStyle: "cards" | "list" | "bento";
@@ -40,7 +43,9 @@ export const insurancePages: InsurancePage[] = [
     title: "Seguro de automóvel.\nCuidado em cada caminho.",
     description:
       "Seguro de automóvel para avaliar a proteção do veículo, responsabilidades e assistências de acordo com sua rotina.",
-    image: "/images/automovel-institucional.webp",
+    image: "/images/hero-automovel-10771710.webp",
+    cardImage: "/images/card-automovel-3042415.webp",
+    cardImageAlt: "Um automóvel percorre uma estrada sinuosa ao entardecer.",
     layout: "split",
     tone: "dark",
     featureStyle: "cards",
@@ -131,7 +136,7 @@ export const insurancePages: InsurancePage[] = [
     seoDescription:
       "Conheça possibilidades do seguro de automóvel e saiba o que avaliar sobre coberturas, franquia, terceiros e assistências antes de solicitar uma cotação.",
     imageAlt:
-      "Vista de uma estrada arborizada a partir do interior de um automóvel.",
+      "Um veículo segue por uma rodovia em direção a uma cadeia de montanhas.",
   },
   {
     slug: "plano-de-saude",
@@ -142,7 +147,9 @@ export const insurancePages: InsurancePage[] = [
     title: "Plano de saúde.\nCuidado em cada escolha.",
     description:
       "Conheça os pontos que ajudam a escolher um plano de saúde: rede, abrangência, contratação e condições de utilização.",
-    image: "/images/plano-saude-institucional.webp",
+    image: "/images/hero-plano-saude-4266936.webp",
+    cardImage: "/images/card-plano-saude-8556559.webp",
+    cardImageAlt: "Um grupo pratica alongamento ao ar livre em um parque.",
     layout: "editorial",
     tone: "light",
     featureStyle: "bento",
@@ -248,7 +255,9 @@ export const insurancePages: InsurancePage[] = [
     title: "Consórcio.\nPlaneje a próxima conquista.",
     description:
       "Entenda o consórcio como planejamento em grupo e avalie parcelas, custos e regras de contemplação antes de aderir.",
-    image: "/images/atendimento-consultivo-kampus-8439657.webp",
+    image: "/images/hero-consorcio-7641899.webp",
+    cardImage: "/images/card-consorcio-8293700.webp",
+    cardImageAlt: "Um casal segura as chaves da nova casa.",
     layout: "split",
     tone: "light",
     featureStyle: "list",
@@ -339,7 +348,7 @@ export const insurancePages: InsurancePage[] = [
     seoDescription:
       "Entenda como avaliar um consórcio: grupo, parcelas, taxas, sorteios, lances e uso do crédito. Planeje a aquisição sem presumir contemplação imediata.",
     imageAlt:
-      "Duas pessoas analisam um documento durante uma conversa de planejamento.",
+      "Um consultor entrega as chaves de um imóvel a um casal.",
   },
   {
     slug: "vida",
@@ -350,7 +359,9 @@ export const insurancePages: InsurancePage[] = [
     title: "Seguro de vida.\nCuidado que olha adiante.",
     description:
       "Uma conversa sobre seguro de vida, responsabilidades e proteção financeira para as pessoas que importam para você.",
-    image: "/images/familia-parque-kampus-6182114.webp",
+    image: "/images/hero-vida-5801673.webp",
+    cardImage: "/images/card-vida-4260639.webp",
+    cardImageAlt: "Uma família compartilha um momento tranquilo em casa.",
     layout: "reverse",
     tone: "light",
     featureStyle: "cards",
@@ -440,7 +451,7 @@ export const insurancePages: InsurancePage[] = [
     seoTitle: "Seguro de Vida: proteção para pessoas e planos",
     seoDescription:
       "Entenda o seguro de vida e o que avaliar sobre beneficiários, capital segurado, eventos cobertos e condições antes de escolher uma proposta.",
-    imageAlt: "Uma família compartilha um momento de proximidade em um parque.",
+    imageAlt: "Uma família reunida compartilha um momento de alegria em casa.",
   },
   {
     slug: "seguro-saude",
@@ -451,8 +462,10 @@ export const insurancePages: InsurancePage[] = [
     title: "Seguro saúde.\nClareza para cuidar de você.",
     description:
       "Avalie o funcionamento do seguro saúde, da rede de atendimento às regras de eventual reembolso e utilização.",
-    image: "/images/seguro-saude-institucional.webp",
-    imagePosition: "center 58%",
+    image: "/images/hero-seguro-saude-34159000.webp",
+    imagePosition: "58% center",
+    cardImage: "/images/card-seguro-saude-4269274.webp",
+    cardImageAlt: "Profissionais de saúde atendem na recepção de uma clínica.",
     layout: "reverse",
     tone: "dark",
     featureStyle: "list",
@@ -543,7 +556,7 @@ export const insurancePages: InsurancePage[] = [
     seoDescription:
       "Conheça os pontos para avaliar um seguro saúde: rede, abrangência, utilização e eventual reembolso, conforme as condições do produto escolhido.",
     imageAlt:
-      "Uma mulher conversa com um profissional de saúde durante uma consulta.",
+      "Uma profissional de saúde conversa com uma paciente durante uma consulta.",
   },
   {
     slug: "empresarial",
@@ -554,7 +567,9 @@ export const insurancePages: InsurancePage[] = [
     title: "Seguro empresarial.\nProteção para seguir.",
     description:
       "Seguro empresarial começa pelo entendimento da atividade, do patrimônio e dos riscos que fazem parte da operação.",
-    image: "/images/empresarial-institucional.webp",
+    image: "/images/hero-empresarial-8171200.webp",
+    cardImage: "/images/card-empresarial-9034703.webp",
+    cardImageAlt: "Uma equipe analisa documentos em um ambiente corporativo.",
     layout: "panorama",
     tone: "dark",
     featureStyle: "bento",
@@ -660,7 +675,9 @@ export const insurancePages: InsurancePage[] = [
     title: "Seguro de transportes.\nCuidado em cada trajeto.",
     description:
       "Entenda as possibilidades de seguro de transportes considerando mercadoria, percurso e responsabilidades da operação.",
-    image: "/images/transportes-institucional.webp",
+    image: "/images/hero-transportes-15595843.webp",
+    cardImage: "/images/card-transportes-4487383.webp",
+    cardImageAlt: "Profissionais transportam uma caixa em um centro logístico.",
     layout: "split",
     tone: "dark",
     featureStyle: "list",
@@ -751,8 +768,7 @@ export const insurancePages: InsurancePage[] = [
     seoTitle: "Seguro de Transportes: cargas e responsabilidades",
     seoDescription:
       "Saiba o que avaliar no seguro de transportes: mercadorias, percursos, responsabilidades, limites e condições de proteção para cada operação.",
-    imageAlt:
-      "Profissionais caminham entre corredores de mercadorias em um armazém logístico.",
+    imageAlt: "Um caminhão de carga percorre uma rodovia.",
   },
   {
     slug: "engenharia",
@@ -763,8 +779,10 @@ export const insurancePages: InsurancePage[] = [
     title: "Seguro de engenharia.\nPlanejar também é proteger.",
     description:
       "Conheça possibilidades do seguro de engenharia para avaliar riscos de obras e projetos, do escopo ao cronograma.",
-    image: "/images/engenharia-institucional.webp",
+    image: "/images/hero-engenharia-8961026.webp",
     imagePosition: "40% center",
+    cardImage: "/images/card-engenharia-6285154.webp",
+    cardImageAlt: "Profissionais de engenharia analisam uma planta técnica.",
     layout: "panorama",
     tone: "dark",
     featureStyle: "cards",
@@ -855,7 +873,7 @@ export const insurancePages: InsurancePage[] = [
     seoDescription:
       "Entenda o que avaliar no seguro de engenharia: características da obra, etapas, equipamentos, responsabilidades, cronograma e condições do contrato.",
     imageAlt:
-      "Profissional de engenharia com capacete acompanha uma obra em andamento.",
+      "Profissionais acompanham atividades em um canteiro de obras.",
   },
 ];
 

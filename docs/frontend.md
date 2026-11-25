@@ -102,9 +102,11 @@ o grid principal, os tokens de cor, a Inter e o logotipo oficial.
 As especificações de movimento desta seção substituem as da primeira versão
 de MotionEnhancements descrita no histórico acima.
 
-Sequência do hero: eyebrow, título, descrição, ações e nota em intervalos de
-130 ms; visual entra em paralelo a partir de 230 ms. Seções usam opacity e
-translateY de 26 px, duração de 760 ms. Cards escalonam 95 ms por coluna.
+Sequência do hero: breadcrumbs nas páginas internas, eyebrow, título, descrição,
+ações e nota em intervalos de 130 ms; visual entra em paralelo a partir de 230 ms.
+Seções usam opacity e translate individual de 26 px, duração de 760 ms, com
+entrada vertical ou lateral conforme a composição. Cards escalonam 95 ms pela
+quantidade real de colunas calculada em cada breakpoint.
 Etapas do processo entram com intervalo de 170 ms; números têm gesto de escala
 e translação e os conectores usam scaleX com origem à esquerda. Grafismos fazem
 um único assentamento de 1150 ms, sem loops, parallax ou processamento de scroll
@@ -117,6 +119,13 @@ uma biblioteca adicional. Os tokens e funções nativas mantêm os padrões reut
 Avaliação apoiada na [documentação oficial do Motion](https://motion.dev/docs/react),
 especialmente suas vantagens para layout compartilhado, gestos e integração com React.
 Movimento reduzido cancela efeitos e entradas; conteúdo permanece legível sem JS.
+
+Na auditoria de 25/11/2026, a entrada deixou de animar a propriedade transform
+dos cards: translate individual evita disputa com a elevação de hover/foco e
+elimina oscilação durante o stagger. Cada alvo continua executando uma única vez;
+foco de teclado conclui sua animação e a troca de rota cancela instâncias antigas.
+Cards e botões receberam estados distintos de hover, focus-visible e active,
+sempre com transform/opacity e sem deslocar o layout.
 
 ContactModalProvider envolve os componentes de servidor, sem convertê-los em
 componentes de cliente. QuoteButton distingue ação de cotação de navegação.

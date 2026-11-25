@@ -1,162 +1,191 @@
 [
   {
-    "file": "atendimento-consultivo-kampus-8439657.webp",
+    "file": "home-hero-familia-7220931.webp",
+    "application": "Home / hero",
+    "author": "Pavel Danilyuk",
+    "source": "https://www.pexels.com/photo/a-family-bonding-inside-the-playroom-7220931/",
+    "photo_id": "7220931",
+    "bytes": 87686,
+    "sha256": "c8e0057c0e1c6f01d5536b88e5f506ccc4bf8f5bb5d996740c868ee0c04317ec"
+  },
+  {
+    "file": "home-consultoria-8441811.webp",
+    "application": "Home / Sobre",
     "author": "Kampus Production",
-    "source": "https://www.pexels.com/photo/bearded-man-showing-an-elderly-client-a-document-8439657/",
-    "photo_id": "8439657",
-    "license": "https://www.pexels.com/license/",
-    "verified": "2026-11-13",
-    "application": "about",
-    "illustrative": true,
-    "ai_generated": false,
-    "dimensions": [
-      1400,
-      934
-    ],
-    "bytes": 46710,
-    "sha256": "ddf7046e36062304ae4401b2d611cc44d0074071b86ff5f93d032620ba3c44ee",
-    "treatment": "Downloaded at 1400 px; WebP quality 82; CSS crop and official-color overlay; no generative edits."
+    "source": "https://www.pexels.com/photo/an-agent-showing-documents-to-an-elderly-man-8441811/",
+    "photo_id": "8441811",
+    "bytes": 77722,
+    "sha256": "e1fdf522436ae5fc40118086f1c0add2e5a401c974fa52b82b352cd465db85da"
   },
   {
-    "file": "familia-parque-kampus-6182114.webp",
-    "author": "Kampus Production",
-    "source": "https://www.pexels.com/photo/a-family-spending-time-together-on-a-park-6182114/",
-    "photo_id": "6182114",
-    "license": "https://www.pexels.com/license/",
-    "verified": "2026-11-13",
-    "application": "hero",
-    "illustrative": true,
-    "ai_generated": false,
-    "dimensions": [
-      1400,
-      935
-    ],
-    "bytes": 122844,
-    "sha256": "4192288831e4aca4e874d6ac334dc8fc65552c334260b66bdd3ad2609fc0a959",
-    "treatment": "Downloaded at 1400 px; WebP quality 82; CSS crop and official-color overlay; no generative edits."
+    "file": "sobre-equipe-7495644.webp",
+    "application": "Sobre Nós / hero",
+    "author": "Moe Magners",
+    "source": "https://www.pexels.com/photo/people-having-a-discussion-at-the-office-7495644/",
+    "photo_id": "7495644",
+    "bytes": 73722,
+    "sha256": "631531f8e5c91e914d62ca3a8170232e9f0346aa0b5778edbcdf5bcdf65fa718"
   },
   {
-    "file": "automovel-institucional.webp",
-    "author": "Aedrian Salazar",
-    "source": "https://www.pexels.com/photo/a-person-driving-car-on-road-11942041/",
-    "photo_id": "11942041",
-    "license": "https://www.pexels.com/license/",
-    "verified": "2026-11-13",
-    "application": "automovel",
-    "illustrative": true,
-    "ai_generated": false,
-    "dimensions": [
-      1400,
-      933
-    ],
-    "bytes": 82730,
-    "sha256": "778318d79ab546144a3f580701ccdab209cc63c1effc762eaa00ed85942981fb",
-    "treatment": "Downloaded at 1500 px; crop where specified to exclude branded packaging; resized to maximum 1400 px without enlargement; WebP quality 82; no generative edits.",
-    "crop": null
+    "file": "seguros-solucoes-12899115.webp",
+    "application": "Seguros / hero",
+    "author": "Mizuno K",
+    "source": "https://www.pexels.com/photo/meeting-in-office-12899115/",
+    "photo_id": "12899115",
+    "bytes": 84604,
+    "sha256": "026f330285a4fbed85d8ab45e78e1f97d9d0f92337ddc3ceee7368adef0035e4"
   },
   {
-    "file": "plano-saude-institucional.webp",
-    "author": "Antoni Shkraba",
-    "source": "https://www.pexels.com/photo/woman-consulting-a-doctor-5215008/",
-    "photo_id": "5215008",
-    "license": "https://www.pexels.com/license/",
-    "verified": "2026-11-13",
-    "application": "plano-saude",
-    "illustrative": true,
-    "ai_generated": false,
-    "dimensions": [
-      1250,
-      900
-    ],
-    "bytes": 62068,
-    "sha256": "70f924efcfb1ffa3c66df304ceddf36b2ee751e234a5781c2e32a6ba3bb0f5b0",
-    "treatment": "Downloaded at 1500 px; crop where specified to exclude branded packaging; resized to maximum 1400 px without enlargement; WebP quality 82; no generative edits.",
-    "crop": {
-      "left": 0,
-      "top": 450,
-      "width": 1250,
-      "height": 900
-    }
+    "file": "contato-atendimento-36729962.webp",
+    "application": "Contato / hero",
+    "author": "Vitaly Gariev",
+    "source": "https://www.pexels.com/photo/young-couple-meeting-financial-advisor-for-consultation-36729962/",
+    "photo_id": "36729962",
+    "bytes": 92270,
+    "sha256": "ac8f8e03d0565f8d9a9c0289816d9ee9c0885477547722ac08ef64da0bd3a0d3"
   },
   {
-    "file": "seguro-saude-institucional.webp",
+    "file": "card-automovel-3042415.webp",
+    "application": "Seguros / card Automóvel",
+    "author": "Ricky Esquivel",
+    "source": "https://www.pexels.com/photo/car-on-the-road-3042415/",
+    "photo_id": "3042415",
+    "bytes": 185974,
+    "sha256": "60ded4881ee83cb9b02a38f09cd23660ae50391a4fc722508e46df128901dbb8"
+  },
+  {
+    "file": "hero-automovel-10771710.webp",
+    "application": "Seguro de Automóvel / hero",
+    "author": "Ali Kazal",
+    "source": "https://www.pexels.com/photo/a-car-on-the-road-10771710/",
+    "photo_id": "10771710",
+    "bytes": 85492,
+    "sha256": "98d6d6a13e7273d07a7ccdd6cb4696ab85a68ce37b0cdae88e8522e7fe9e4100"
+  },
+  {
+    "file": "card-plano-saude-8556559.webp",
+    "application": "Seguros / card Plano de Saúde",
+    "author": "Edmond Dantès",
+    "source": "https://www.pexels.com/photo/people-doing-stretching-at-the-park-8556559/",
+    "photo_id": "8556559",
+    "bytes": 281148,
+    "sha256": "65cbb37fd0055dd69696adc58de1507d58848b9e97d677b4d80fb9dafccda4fa"
+  },
+  {
+    "file": "hero-plano-saude-4266936.webp",
+    "application": "Plano de Saúde / hero",
     "author": "Cedric Fauntleroy",
-    "source": "https://www.pexels.com/photo/a-woman-talking-to-her-doctor-4266930/",
-    "photo_id": "4266930",
-    "license": "https://www.pexels.com/license/",
-    "verified": "2026-11-13",
-    "application": "seguro-saude",
-    "illustrative": true,
-    "ai_generated": false,
-    "dimensions": [
-      1400,
-      2100
-    ],
-    "bytes": 128510,
-    "sha256": "1f4e67096b139ec681c54d1f88a1b43df9a25cf86c9b354feba1ce94eed5ca25",
-    "treatment": "Downloaded at 1500 px; crop where specified to exclude branded packaging; resized to maximum 1400 px without enlargement; WebP quality 82; no generative edits.",
-    "crop": null
+    "source": "https://www.pexels.com/photo/a-doctor-talking-to-a-patient-while-holding-a-tablet-4266936/",
+    "photo_id": "4266936",
+    "bytes": 67962,
+    "sha256": "515f76732867a9171263bb18b6d85aacd546277d1b1c10047a264785a971db65"
   },
   {
-    "file": "empresarial-institucional.webp",
-    "author": "fauxels",
-    "source": "https://www.pexels.com/photo/man-wearing-brown-suit-jacket-3184339/",
-    "photo_id": "3184339",
-    "license": "https://www.pexels.com/license/",
-    "verified": "2026-11-13",
-    "application": "empresarial",
-    "illustrative": true,
-    "ai_generated": false,
-    "dimensions": [
-      1400,
-      933
-    ],
-    "bytes": 74166,
-    "sha256": "e5c1b17370c63000e34c7c1abf4801a9a93cf11442c14e8a856db02ea9943bd1",
-    "treatment": "Downloaded at 1500 px; crop where specified to exclude branded packaging; resized to maximum 1400 px without enlargement; WebP quality 82; no generative edits.",
-    "crop": null
+    "file": "card-consorcio-8293700.webp",
+    "application": "Seguros / card Consórcio",
+    "author": "RDNE Stock project",
+    "source": "https://www.pexels.com/photo/happy-couple-holding-and-showing-a-house-key-8293700/",
+    "photo_id": "8293700",
+    "bytes": 40810,
+    "sha256": "28943f2a7fd2e18c50dd87dfdd0f7b3559479bef133cf2c7a27494858f8fecfb"
   },
   {
-    "file": "transportes-institucional.webp",
+    "file": "hero-consorcio-7641899.webp",
+    "application": "Consórcio / hero",
+    "author": "Alena Darmel",
+    "source": "https://www.pexels.com/photo/a-real-estate-agent-handing-the-key-to-the-new-homeowners-7641899/",
+    "photo_id": "7641899",
+    "bytes": 87046,
+    "sha256": "f61acae1ebe27c15cfe39f15217a3c59debb2bba67fe9647a83a8bb302f07b87"
+  },
+  {
+    "file": "card-vida-4260639.webp",
+    "application": "Seguros / card Vida",
+    "author": "August de Richelieu",
+    "source": "https://www.pexels.com/photo/happy-family-sitting-on-a-couch-4260639/",
+    "photo_id": "4260639",
+    "bytes": 75520,
+    "sha256": "7ae58906cfd5808f1ad5df0fb8b824c9f52ba3149c4e9abd37d8f8382c3bc962"
+  },
+  {
+    "file": "hero-vida-5801673.webp",
+    "application": "Seguro de Vida / hero",
+    "author": "cottonbro studio",
+    "source": "https://www.pexels.com/photo/a-family-sitting-on-the-sofa-together-5801673/",
+    "photo_id": "5801673",
+    "bytes": 90230,
+    "sha256": "61df5f28075b709ef912a328eff1478ed5c9c8fe14a884160fc910f9f2a65c72"
+  },
+  {
+    "file": "card-seguro-saude-4269274.webp",
+    "application": "Seguros / card Seguro Saúde",
+    "author": "Cedric Fauntleroy",
+    "source": "https://www.pexels.com/photo/a-receptionist-and-a-practitioner-at-the-reception-4269274/",
+    "photo_id": "4269274",
+    "bytes": 47584,
+    "sha256": "e3f9d28041cf484ea81f901d6705065a4fd8681cc602757795f48e157e1c7cca"
+  },
+  {
+    "file": "hero-seguro-saude-34159000.webp",
+    "application": "Seguro Saúde / hero",
+    "author": "Anhelina Vasylyk",
+    "source": "https://www.pexels.com/photo/healthcare-professional-consulting-with-patient-34159000/",
+    "photo_id": "34159000",
+    "bytes": 40110,
+    "sha256": "81610f11c29d31b657815c20d22e3c5861cbdba3eed36a2af94494dc20966b8d"
+  },
+  {
+    "file": "card-empresarial-9034703.webp",
+    "application": "Seguros / card Empresarial",
+    "author": "RDNE Stock project",
+    "source": "https://www.pexels.com/photo/photo-of-people-having-a-meeting-at-the-office-9034703/",
+    "photo_id": "9034703",
+    "bytes": 64480,
+    "sha256": "5897b3c1f86a0563af2d5a30fcf57ce8455156ebc0465bb28c240bbca1b822a3"
+  },
+  {
+    "file": "hero-empresarial-8171200.webp",
+    "application": "Seguro Empresarial / hero",
+    "author": "Kampus Production",
+    "source": "https://www.pexels.com/photo/colleagues-having-a-meeting-in-the-office-8171200/",
+    "photo_id": "8171200",
+    "bytes": 60494,
+    "sha256": "d5392267af5004ce84cb64593aed5ef2fadb4679825b424ca43167e8e9ce84f3"
+  },
+  {
+    "file": "card-transportes-4487383.webp",
+    "application": "Seguros / card Transportes",
     "author": "Tiger Lily",
     "source": "https://www.pexels.com/photo/workers-walking-along-aisle-in-warehouse-4487383/",
     "photo_id": "4487383",
-    "license": "https://www.pexels.com/license/",
-    "verified": "2026-11-13",
-    "application": "transportes",
-    "illustrative": true,
-    "ai_generated": false,
-    "dimensions": [
-      900,
-      1000
-    ],
-    "bytes": 125902,
-    "sha256": "e6a9f60d5abee789857a956eb75b8ebbf415ba6313e489cec82ca164a27f9ed3",
-    "treatment": "Downloaded at 1500 px; crop where specified to exclude branded packaging; resized to maximum 1400 px without enlargement; WebP quality 82; no generative edits.",
-    "crop": {
-      "left": 575,
-      "top": 0,
-      "width": 900,
-      "height": 1000
-    }
+    "bytes": 212108,
+    "sha256": "3659cdc9472a9ff5023323ad51fb62b4035a7d80260ca23e46963b9858c9b8e6"
   },
   {
-    "file": "engenharia-institucional.webp",
-    "author": "Alejandro Vergara",
-    "source": "https://www.pexels.com/photo/female-engineer-inspecting-construction-site-37779772/",
-    "photo_id": "37779772",
-    "license": "https://www.pexels.com/license/",
-    "verified": "2026-11-13",
-    "application": "engenharia",
-    "illustrative": true,
-    "ai_generated": false,
-    "dimensions": [
-      1400,
-      933
-    ],
-    "bytes": 119172,
-    "sha256": "167640cd5f18dd01638077601cc78fbd360553c72aeb93b6a3524b70aa667b42",
-    "treatment": "Downloaded at 1500 px; crop where specified to exclude branded packaging; resized to maximum 1400 px without enlargement; WebP quality 82; no generative edits.",
-    "crop": null
+    "file": "hero-transportes-15595843.webp",
+    "application": "Seguro de Transportes / hero",
+    "author": "Boris Hamer",
+    "source": "https://www.pexels.com/photo/a-truck-on-an-expressway-15595843/",
+    "photo_id": "15595843",
+    "bytes": 88476,
+    "sha256": "1922df8e45b225fdd40d2d71c240aada323e0d61d73bdea7c53322a1c5cd80ad"
+  },
+  {
+    "file": "card-engenharia-6285154.webp",
+    "application": "Seguros / card Engenharia",
+    "author": "Gustavo Fring",
+    "source": "https://www.pexels.com/photo/engineers-reading-blueprint-6285154/",
+    "photo_id": "6285154",
+    "bytes": 38384,
+    "sha256": "03fd856bd780b928f38e6edd80bb452fd77dc46d6571e8bf071d4254a7c60a04"
+  },
+  {
+    "file": "hero-engenharia-8961026.webp",
+    "application": "Seguro de Engenharia / hero",
+    "author": "Mikael Blomkvist",
+    "source": "https://www.pexels.com/photo/man-and-woman-working-in-a-construction-site-8961026/",
+    "photo_id": "8961026",
+    "bytes": 94908,
+    "sha256": "db72ffad84ed28acee4add25610e6a07572cc397131a19d2b31b27337636157b"
   }
 ]

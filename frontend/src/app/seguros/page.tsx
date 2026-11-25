@@ -20,9 +20,9 @@ export default function InsuranceCatalog() {
         title={"Seguros e soluções.\nPara os seus próximos planos."}
         description="Sua vida não cabe em uma única modalidade. Explore os caminhos de proteção e planejamento que podem fazer parte da sua próxima decisão."
         crumbs={[{ label: "Seguros e soluções" }]}
-        image="/images/atendimento-consultivo-kampus-8439657.webp"
-        imageAlt="Duas pessoas conversam e analisam um documento em um ambiente profissional."
-        imagePosition="48% center"
+        image="/images/seguros-solucoes-12899115.webp"
+        imageAlt="Uma consultora organiza possibilidades com um casal durante uma reunião."
+        imagePosition="50% center"
         layout="split"
         tone="light"
       />
